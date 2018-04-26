@@ -35,7 +35,7 @@ Public Class Sortierer
 
     Private Sub btn_split_Click(sender As Object, e As EventArgs) Handles btn_split.Click
         Dim curBarcode As FoundBarcode
-        Dim nextBarcode As FoundBarcode
+        Dim nextBarcode As FoundBarcode = New FoundBarcode
 
         Dim extractor As New InfoExtractor
         extractor.RegistrationName = "lukasmoeller1998+bytescoutnotforresale@gmail.com"

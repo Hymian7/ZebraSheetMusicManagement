@@ -69,4 +69,5 @@ Public Class Hauptfenster
     Private Sub btn_Einstellungen_Click(sender As Object, e As EventArgs) Handles btn_Einstellungen.Click
         Einstellungen.Show()
     End Sub
+
 End Class

@@ -4,8 +4,13 @@ Imports System.IO
 
 Module SQLInterface
 
-    Public cnn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='D:\Dokumente\Visual Studio 2015\Projects\Notenarchiv\Notenarchiv\database\db.accdb'")
+    Public cnn As New OleDbConnection(String.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='{0}'", My.Settings.DBPath))
+
     Public cmd As New OleDbCommand
+
+    Public Function GetConnectionString() As String
+        Return cnn.ConnectionString
+    End Function
 
     Public Function GetSQL(ByVal SQLString As String) As DataTable
 

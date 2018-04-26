@@ -25,23 +25,24 @@ Partial Class Hauptfenster
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Hauptfenster))
         Me.Ribbon1 = New System.Windows.Forms.Ribbon()
-        Me.ribbontab_Importieren = New System.Windows.Forms.RibbonTab()
-        Me.RibbonPanel_Importieren = New System.Windows.Forms.RibbonPanel()
-        Me.RibbonPanelEinlesen = New System.Windows.Forms.RibbonPanel()
-        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.DataSet1 = New System.Data.DataSet()
         Me.RibbonOrbMenuItem1 = New System.Windows.Forms.RibbonOrbMenuItem()
         Me.RibbonOrbMenuItem2 = New System.Windows.Forms.RibbonOrbMenuItem()
         Me.RibbonOrbMenuItem3 = New System.Windows.Forms.RibbonOrbMenuItem()
         Me.RibbonOrbOptionButton1 = New System.Windows.Forms.RibbonOrbOptionButton()
         Me.RibbonOrbOptionButton2 = New System.Windows.Forms.RibbonOrbOptionButton()
         Me.RibbonOrbRecentItem1 = New System.Windows.Forms.RibbonOrbRecentItem()
+        Me.ribbontab_Importieren = New System.Windows.Forms.RibbonTab()
+        Me.RibbonPanel_Importieren = New System.Windows.Forms.RibbonPanel()
         Me.RibbonButton_Importieren = New System.Windows.Forms.RibbonButton()
+        Me.RibbonPanelEinlesen = New System.Windows.Forms.RibbonPanel()
         Me.RibbonButtonEinlesen = New System.Windows.Forms.RibbonButton()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.DataSet1 = New System.Data.DataSet()
         Me.btn_Einstellungen = New System.Windows.Forms.Button()
+        Me.RibbonButton1 = New System.Windows.Forms.RibbonButton()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,59 +75,6 @@ Partial Class Hauptfenster
         Me.Ribbon1.TabsMargin = New System.Windows.Forms.Padding(5, 26, 20, 0)
         Me.Ribbon1.TabSpacing = 4
         Me.Ribbon1.Text = "Ribbon1"
-        '
-        'ribbontab_Importieren
-        '
-        Me.ribbontab_Importieren.Name = "ribbontab_Importieren"
-        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanel_Importieren)
-        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanelEinlesen)
-        Me.ribbontab_Importieren.Text = "Importieren"
-        '
-        'RibbonPanel_Importieren
-        '
-        Me.RibbonPanel_Importieren.Items.Add(Me.RibbonButton_Importieren)
-        Me.RibbonPanel_Importieren.Name = "RibbonPanel_Importieren"
-        Me.RibbonPanel_Importieren.Text = "Daten Importieren"
-        '
-        'RibbonPanelEinlesen
-        '
-        Me.RibbonPanelEinlesen.Items.Add(Me.RibbonButtonEinlesen)
-        Me.RibbonPanelEinlesen.Name = "RibbonPanelEinlesen"
-        Me.RibbonPanelEinlesen.Text = "Einlesen"
-        '
-        'btnRefresh
-        '
-        Me.btnRefresh.Location = New System.Drawing.Point(58, 182)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(75, 23)
-        Me.btnRefresh.TabIndex = 2
-        Me.btnRefresh.Text = "Aktualisieren"
-        Me.btnRefresh.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(139, 182)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.DataGridView1.Size = New System.Drawing.Size(662, 325)
-        Me.DataGridView1.TabIndex = 3
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(58, 211)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdd.TabIndex = 4
-        Me.btnAdd.Text = "Hinzufügen"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "NewDataSet"
         '
         'RibbonOrbMenuItem1
         '
@@ -179,12 +127,31 @@ Partial Class Hauptfenster
         Me.RibbonOrbRecentItem1.SmallImage = CType(resources.GetObject("RibbonOrbRecentItem1.SmallImage"), System.Drawing.Image)
         Me.RibbonOrbRecentItem1.Text = "RibbonOrbRecentItem1"
         '
+        'ribbontab_Importieren
+        '
+        Me.ribbontab_Importieren.Name = "ribbontab_Importieren"
+        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanel_Importieren)
+        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanelEinlesen)
+        Me.ribbontab_Importieren.Text = "Importieren"
+        '
+        'RibbonPanel_Importieren
+        '
+        Me.RibbonPanel_Importieren.Items.Add(Me.RibbonButton_Importieren)
+        Me.RibbonPanel_Importieren.Name = "RibbonPanel_Importieren"
+        Me.RibbonPanel_Importieren.Text = "Daten Importieren"
+        '
         'RibbonButton_Importieren
         '
         Me.RibbonButton_Importieren.Image = Global.Notenarchiv.My.Resources.Resources.insert
         Me.RibbonButton_Importieren.LargeImage = Global.Notenarchiv.My.Resources.Resources.insert
         Me.RibbonButton_Importieren.Name = "RibbonButton_Importieren"
         Me.RibbonButton_Importieren.SmallImage = Global.Notenarchiv.My.Resources.Resources.insert
+        '
+        'RibbonPanelEinlesen
+        '
+        Me.RibbonPanelEinlesen.Items.Add(Me.RibbonButtonEinlesen)
+        Me.RibbonPanelEinlesen.Name = "RibbonPanelEinlesen"
+        Me.RibbonPanelEinlesen.Text = "Einlesen"
         '
         'RibbonButtonEinlesen
         '
@@ -193,14 +160,55 @@ Partial Class Hauptfenster
         Me.RibbonButtonEinlesen.Name = "RibbonButtonEinlesen"
         Me.RibbonButtonEinlesen.SmallImage = CType(resources.GetObject("RibbonButtonEinlesen.SmallImage"), System.Drawing.Image)
         '
+        'btnRefresh
+        '
+        Me.btnRefresh.Location = New System.Drawing.Point(58, 182)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(75, 23)
+        Me.btnRefresh.TabIndex = 2
+        Me.btnRefresh.Text = "Aktualisieren"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(139, 182)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DataGridView1.Size = New System.Drawing.Size(622, 325)
+        Me.DataGridView1.TabIndex = 3
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(58, 211)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
+        Me.btnAdd.TabIndex = 4
+        Me.btnAdd.Text = "Hinzufügen"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "NewDataSet"
+        '
         'btn_Einstellungen
         '
-        Me.btn_Einstellungen.Location = New System.Drawing.Point(999, 229)
+        Me.btn_Einstellungen.Location = New System.Drawing.Point(661, 153)
         Me.btn_Einstellungen.Name = "btn_Einstellungen"
         Me.btn_Einstellungen.Size = New System.Drawing.Size(100, 23)
         Me.btn_Einstellungen.TabIndex = 5
         Me.btn_Einstellungen.Text = "Einstellungen"
         Me.btn_Einstellungen.UseVisualStyleBackColor = True
+        '
+        'RibbonButton1
+        '
+        Me.RibbonButton1.Image = CType(resources.GetObject("RibbonButton1.Image"), System.Drawing.Image)
+        Me.RibbonButton1.LargeImage = CType(resources.GetObject("RibbonButton1.LargeImage"), System.Drawing.Image)
+        Me.RibbonButton1.Name = "RibbonButton1"
+        Me.RibbonButton1.SmallImage = CType(resources.GetObject("RibbonButton1.SmallImage"), System.Drawing.Image)
         '
         'Hauptfenster
         '
@@ -244,4 +252,5 @@ Partial Class Hauptfenster
     Friend WithEvents RibbonPanelEinlesen As RibbonPanel
     Friend WithEvents RibbonButtonEinlesen As RibbonButton
     Friend WithEvents btn_Einstellungen As Button
+    Friend WithEvents RibbonButton1 As System.Windows.Forms.RibbonButton
 End Class

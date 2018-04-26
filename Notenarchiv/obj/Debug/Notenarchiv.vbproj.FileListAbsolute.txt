@@ -34,3 +34,38 @@ D:\Dokumente\Visual Studio 2015\Projects\Notenarchiv\Notenarchiv\bin\Debug\Bytes
 D:\Dokumente\Visual Studio 2015\Projects\Notenarchiv\Notenarchiv\bin\Debug\Bytescout.PDF.xml
 D:\Dokumente\Visual Studio 2015\Projects\Notenarchiv\Notenarchiv\bin\Debug\Bytescout.PDF.Converters.xml
 D:\Dokumente\Visual Studio 2015\Projects\Notenarchiv\Notenarchiv\obj\Debug\Notenarchiv.Einstellungen.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Bytescout.BarCodeReader.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Bytescout.PDF.Converters.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Bytescout.PDF.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Bytescout.PDFExtractor.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Bytescout.PDFExtractor.OCRExtension.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\EntityFramework.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\EntityFramework.SqlServerCompact.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\System.Data.SQLite.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\System.Data.SqlServerCe.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\System.Windows.Forms.Ribbon.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\EntityFramework.xml
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\EntityFramework.SqlServerCompact.xml
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\System.Data.SQLite.xml
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\System.Data.SQLite.dll.config
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbprojResolveAssemblyReference.cache
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbproj.GenerateResource.cache
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbproj.CoreCompileInputs.cache
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbproj.CopyComplete
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Notenarchiv.exe.config
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Notenarchiv.exe
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Notenarchiv.pdb
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Notenarchiv.xml
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Detail.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Einlesen.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Einstellungen.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Sortierer.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Hauptfenster.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Resources.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.exe
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.xml
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.pdb

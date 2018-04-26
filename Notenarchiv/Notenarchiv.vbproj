@@ -64,24 +64,25 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bytescout.BarCodeReader, Version=10.0.0.1771, Culture=neutral, PublicKeyToken=f7dd1bd9d40a50eb, processorArchitecture=MSIL">
+    <Reference Include="Bytescout.BarCodeReader, Version=10.1.0.1784, Culture=neutral, PublicKeyToken=f7dd1bd9d40a50eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Bytescout BarCode Reader SDK\Redistributable\net4.50\Bytescout.BarCodeReader.dll</HintPath>
+      <HintPath>references\Bytescout.BarCodeReader.dll</HintPath>
     </Reference>
     <Reference Include="Bytescout.PDF, Version=1.8.0.236, Culture=neutral, PublicKeyToken=f7dd1bd9d40a50eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Bytescout PDF SDK\net4.5\Bytescout.PDF.dll</HintPath>
+      <HintPath>references\Bytescout.PDF.dll</HintPath>
     </Reference>
-    <Reference Include="Bytescout.PDF.Converters">
-      <HintPath>C:\Program Files\Bytescout PDF SDK\net4.5\Bytescout.PDF.Converters.dll</HintPath>
-    </Reference>
-    <Reference Include="Bytescout.PDFExtractor, Version=8.8.1.3046, Culture=neutral, PublicKeyToken=f7dd1bd9d40a50eb, processorArchitecture=MSIL">
+    <Reference Include="Bytescout.PDF.Converters, Version=1.8.0.236, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Bytescout PDF Extractor SDK\net4.00\Bytescout.PDFExtractor.dll</HintPath>
+      <HintPath>references\Bytescout.PDF.Converters.dll</HintPath>
+    </Reference>
+    <Reference Include="Bytescout.PDFExtractor, Version=8.8.1.3076, Culture=neutral, PublicKeyToken=f7dd1bd9d40a50eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>references\Bytescout.PDFExtractor.dll</HintPath>
     </Reference>
     <Reference Include="Bytescout.PDFExtractor.OCRExtension, Version=8.8.1.3076, Culture=neutral, PublicKeyToken=f7dd1bd9d40a50eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Bytescout PDF Extractor SDK\net4.00\Bytescout.PDFExtractor.OCRExtension.dll</HintPath>
+      <HintPath>references\Bytescout.PDFExtractor.OCRExtension.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -164,6 +165,7 @@
     </Compile>
     <Compile Include="Notenblatt.vb" />
     <Compile Include="Notensatz.vb" />
+    <Compile Include="Settings.vb" />
     <Compile Include="Sortieren.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +296,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
