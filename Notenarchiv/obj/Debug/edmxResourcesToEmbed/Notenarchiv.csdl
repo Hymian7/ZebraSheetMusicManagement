@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_Notensatz">
+    <Key>
+      <PropertyRef Name="id_NotensatzNr" />
+    </Key>
+    <Property Name="id_NotensatzNr" Type="Int32" Nullable="false" />
+    <Property Name="dt_Titel" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="dt_Untertitel" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="dt_Interpret" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="dt_Arrangeur" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="dt_Verlag" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tbl_Stimme" Relationship="Self.tbl_Notenblatt" FromRole="tbl_Notensatz" ToRole="tbl_Stimme" />
+  </EntityType>
+  <EntityType Name="tbl_Stimme">
+    <Key>
+      <PropertyRef Name="id_StimmeNr" />
+    </Key>
+    <Property Name="id_StimmeNr" Type="Int32" Nullable="false" />
+    <Property Name="dt_StimmeName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbl_Notensatz" Relationship="Self.tbl_Notenblatt" FromRole="tbl_Stimme" ToRole="tbl_Notensatz" />
+  </EntityType>
+  <Association Name="tbl_Notenblatt">
+    <End Role="tbl_Notensatz" Type="Self.tbl_Notensatz" Multiplicity="*" />
+    <End Role="tbl_Stimme" Type="Self.tbl_Stimme" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Notensatz" EntityType="Self.tbl_Notensatz" />
+    <EntitySet Name="tbl_Stimme" EntityType="Self.tbl_Stimme" />
+    <AssociationSet Name="tbl_Notenblatt" Association="Self.tbl_Notenblatt">
+      <End Role="tbl_Notensatz" EntitySet="tbl_Notensatz" />
+      <End Role="tbl_Stimme" EntitySet="tbl_Stimme" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="tbl_Notensatz">
+      <EntityTypeMapping TypeName="Model.tbl_Notensatz">
+        <MappingFragment StoreEntitySet="tbl_Notensatz">
+          <ScalarProperty Name="id_NotensatzNr" ColumnName="id_NotensatzNr" />
+          <ScalarProperty Name="dt_Titel" ColumnName="dt_Titel" />
+          <ScalarProperty Name="dt_Untertitel" ColumnName="dt_Untertitel" />
+          <ScalarProperty Name="dt_Interpret" ColumnName="dt_Interpret" />
+          <ScalarProperty Name="dt_Arrangeur" ColumnName="dt_Arrangeur" />
+          <ScalarProperty Name="dt_Verlag" ColumnName="dt_Verlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Stimme">
+      <EntityTypeMapping TypeName="Model.tbl_Stimme">
+        <MappingFragment StoreEntitySet="tbl_Stimme">
+          <ScalarProperty Name="id_StimmeNr" ColumnName="id_StimmeNr" />
+          <ScalarProperty Name="dt_StimmeName" ColumnName="dt_StimmeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tbl_Notenblatt" TypeName="Model.tbl_Notenblatt" StoreEntitySet="tbl_Notenblatt">
+      <EndProperty Name="tbl_Notensatz">
+        <ScalarProperty Name="id_NotensatzNr" ColumnName="fk_NotensatzNr" />
+      </EndProperty>
+      <EndProperty Name="tbl_Stimme">
+        <ScalarProperty Name="id_StimmeNr" ColumnName="fk_StimmeNr" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Notenblatt">
+    <Key>
+      <PropertyRef Name="fk_NotensatzNr" />
+      <PropertyRef Name="fk_StimmeNr" />
+    </Key>
+    <Property Name="fk_NotensatzNr" Type="int" Nullable="false" />
+    <Property Name="fk_StimmeNr" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Notensatz">
+    <Key>
+      <PropertyRef Name="id_NotensatzNr" />
+    </Key>
+    <Property Name="id_NotensatzNr" Type="int" Nullable="false" />
+    <Property Name="dt_Titel" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="dt_Untertitel" Type="nchar" MaxLength="100" />
+    <Property Name="dt_Interpret" Type="nchar" MaxLength="100" />
+    <Property Name="dt_Arrangeur" Type="nchar" MaxLength="100" />
+    <Property Name="dt_Verlag" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_Stimme">
+    <Key>
+      <PropertyRef Name="id_StimmeNr" />
+    </Key>
+    <Property Name="id_StimmeNr" Type="int" Nullable="false" />
+    <Property Name="dt_StimmeName" Type="nchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_NotensatzNr">
+    <End Role="tbl_Notensatz" Type="Self.tbl_Notensatz" Multiplicity="1" />
+    <End Role="tbl_Notenblatt" Type="Self.tbl_Notenblatt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Notensatz">
+        <PropertyRef Name="id_NotensatzNr" />
+      </Principal>
+      <Dependent Role="tbl_Notenblatt">
+        <PropertyRef Name="fk_NotensatzNr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_StimmeNr">
+    <End Role="tbl_Stimme" Type="Self.tbl_Stimme" Multiplicity="1" />
+    <End Role="tbl_Notenblatt" Type="Self.tbl_Notenblatt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Stimme">
+        <PropertyRef Name="id_StimmeNr" />
+      </Principal>
+      <Dependent Role="tbl_Notenblatt">
+        <PropertyRef Name="fk_StimmeNr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="tbl_Notenblatt" EntityType="Self.tbl_Notenblatt" store:Type="Tables" />
+    <EntitySet Name="tbl_Notensatz" EntityType="Self.tbl_Notensatz" store:Type="Tables" />
+    <EntitySet Name="tbl_Stimme" EntityType="Self.tbl_Stimme" store:Type="Tables" />
+    <AssociationSet Name="fk_NotensatzNr" Association="Self.fk_NotensatzNr">
+      <End Role="tbl_Notensatz" EntitySet="tbl_Notensatz" />
+      <End Role="tbl_Notenblatt" EntitySet="tbl_Notenblatt" />
+    </AssociationSet>
+    <AssociationSet Name="fk_StimmeNr" Association="Self.fk_StimmeNr">
+      <End Role="tbl_Stimme" EntitySet="tbl_Stimme" />
+      <End Role="tbl_Notenblatt" EntitySet="tbl_Notenblatt" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
