@@ -22,27 +22,96 @@ Partial Class Einstellungen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PropertyGrid1 = New System.Windows.Forms.PropertyGrid()
+        Me.tbArchivePath = New System.Windows.Forms.TextBox()
+        Me.lblArchivePath = New System.Windows.Forms.Label()
+        Me.btnChangeArchivePath = New System.Windows.Forms.Button()
+        Me.btnChangeDBPath = New System.Windows.Forms.Button()
+        Me.lblDBPath = New System.Windows.Forms.Label()
+        Me.tbDBPath = New System.Windows.Forms.TextBox()
+        Me.FolderBrowserDialogArchivePath = New System.Windows.Forms.FolderBrowserDialog()
+        Me.OpenFileDialogDBPath = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
-        'PropertyGrid1
+        'tbArchivePath
         '
-        Me.PropertyGrid1.Location = New System.Drawing.Point(12, 12)
-        Me.PropertyGrid1.Name = "PropertyGrid1"
-        Me.PropertyGrid1.Size = New System.Drawing.Size(690, 291)
-        Me.PropertyGrid1.TabIndex = 0
+        Me.tbArchivePath.Location = New System.Drawing.Point(31, 48)
+        Me.tbArchivePath.Name = "tbArchivePath"
+        Me.tbArchivePath.ReadOnly = True
+        Me.tbArchivePath.Size = New System.Drawing.Size(371, 20)
+        Me.tbArchivePath.TabIndex = 0
+        '
+        'lblArchivePath
+        '
+        Me.lblArchivePath.AutoSize = True
+        Me.lblArchivePath.Location = New System.Drawing.Point(28, 32)
+        Me.lblArchivePath.Name = "lblArchivePath"
+        Me.lblArchivePath.Size = New System.Drawing.Size(87, 13)
+        Me.lblArchivePath.TabIndex = 1
+        Me.lblArchivePath.Text = "Pfad zum Archiv:"
+        '
+        'btnChangeArchivePath
+        '
+        Me.btnChangeArchivePath.Location = New System.Drawing.Point(408, 46)
+        Me.btnChangeArchivePath.Name = "btnChangeArchivePath"
+        Me.btnChangeArchivePath.Size = New System.Drawing.Size(75, 23)
+        Me.btnChangeArchivePath.TabIndex = 2
+        Me.btnChangeArchivePath.Text = "Ändern"
+        Me.btnChangeArchivePath.UseVisualStyleBackColor = True
+        '
+        'btnChangeDBPath
+        '
+        Me.btnChangeDBPath.Location = New System.Drawing.Point(408, 104)
+        Me.btnChangeDBPath.Name = "btnChangeDBPath"
+        Me.btnChangeDBPath.Size = New System.Drawing.Size(75, 23)
+        Me.btnChangeDBPath.TabIndex = 5
+        Me.btnChangeDBPath.Text = "Ändern"
+        Me.btnChangeDBPath.UseVisualStyleBackColor = True
+        '
+        'lblDBPath
+        '
+        Me.lblDBPath.AutoSize = True
+        Me.lblDBPath.Location = New System.Drawing.Point(28, 90)
+        Me.lblDBPath.Name = "lblDBPath"
+        Me.lblDBPath.Size = New System.Drawing.Size(105, 13)
+        Me.lblDBPath.TabIndex = 4
+        Me.lblDBPath.Text = "Pfad zur Datenbank:"
+        '
+        'tbDBPath
+        '
+        Me.tbDBPath.Location = New System.Drawing.Point(31, 106)
+        Me.tbDBPath.Name = "tbDBPath"
+        Me.tbDBPath.ReadOnly = True
+        Me.tbDBPath.Size = New System.Drawing.Size(371, 20)
+        Me.tbDBPath.TabIndex = 3
+        '
+        'OpenFileDialogDBPath
+        '
+        Me.OpenFileDialogDBPath.FileName = "OpenFileDialog1"
         '
         'Einstellungen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(714, 315)
-        Me.Controls.Add(Me.PropertyGrid1)
+        Me.ClientSize = New System.Drawing.Size(505, 172)
+        Me.Controls.Add(Me.btnChangeDBPath)
+        Me.Controls.Add(Me.lblDBPath)
+        Me.Controls.Add(Me.tbDBPath)
+        Me.Controls.Add(Me.btnChangeArchivePath)
+        Me.Controls.Add(Me.lblArchivePath)
+        Me.Controls.Add(Me.tbArchivePath)
         Me.Name = "Einstellungen"
         Me.Text = "Einstellungen"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents PropertyGrid1 As PropertyGrid
+    Friend WithEvents tbArchivePath As TextBox
+    Friend WithEvents lblArchivePath As Label
+    Friend WithEvents btnChangeArchivePath As Button
+    Friend WithEvents btnChangeDBPath As Button
+    Friend WithEvents lblDBPath As Label
+    Friend WithEvents tbDBPath As TextBox
+    Friend WithEvents FolderBrowserDialogArchivePath As FolderBrowserDialog
+    Friend WithEvents OpenFileDialogDBPath As OpenFileDialog
 End Class

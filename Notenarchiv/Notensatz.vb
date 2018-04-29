@@ -55,7 +55,7 @@
     End Sub
 
     Public Shared Function GetNotensatzNrFromDateiname(ByVal pfad As String) As String
-        Return Strings.Right(pfad, 6)
+        Return Strings.Right(pfad, My.Settings.NotensatzNrLength)
     End Function
 
 

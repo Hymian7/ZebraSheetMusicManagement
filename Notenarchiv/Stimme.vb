@@ -23,7 +23,7 @@
     Shared Function GetStimmeNameFromDatei(datei As String) As String
 
         Try
-            Dim dtr As New DataTableReader(GetSQL(String.Format("SELECT dt_StimmeName FROM tbl_Stimme WHERE id_StimmeNr LIKE '{0}'", Strings.Left(Strings.Right(datei, 7), 3))))
+            Dim dtr As New DataTableReader(GetSQL(String.Format("SELECT dt_StimmeName FROM tbl_Stimme WHERE id_StimmeNr LIKE '{0}'", Strings.Left(Strings.Right(datei, My.Settings.StimmeNrLength + 4), My.Settings.StimmeNrLength))))
             dtr.Read()
 
             Return dtr.GetString(dtr.GetOrdinal("dt_StimmeName"))

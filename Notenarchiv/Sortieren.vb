@@ -76,11 +76,11 @@ Public Class Sortierer
 
                 If Not islastpage Then
 
-                    splitter.ExtractPageRange(tb_Datei.Text, tb_Ordner.Text & "/" & Strings.Left(curBarcode.Value, 6) & "/" & Strings.Right(Strings.Left(curBarcode.Value, 9), 3) & ".pdf", curBarcode.Page + 1, nextBarcode.Page)
+                    splitter.ExtractPageRange(tb_Datei.Text, tb_Ordner.Text & "/" & Strings.Left(curBarcode.Value, My.Settings.NotensatzNrLength) & "/" & Strings.Right(Strings.Left(curBarcode.Value, My.Settings.StimmeNrLength + My.Settings.NotensatzNrLength), My.Settings.StimmeNrLength) & ".pdf", curBarcode.Page + 1, nextBarcode.Page)
 
                 Else
 
-                    splitter.ExtractPageRange(tb_Datei.Text, tb_Ordner.Text & "/" & Strings.Left(curBarcode.Value, 6) & "/" & Strings.Right(Strings.Left(curBarcode.Value, 9), 3) & ".pdf", curBarcode.Page + 1, extractor.GetPageCount)
+                    splitter.ExtractPageRange(tb_Datei.Text, tb_Ordner.Text & "/" & Strings.Left(curBarcode.Value, 6) & "/" & Strings.Right(Strings.Left(curBarcode.Value, 9), My.Settings.StimmeNrLength) & ".pdf", curBarcode.Page + 1, extractor.GetPageCount)
 
                 End If
 

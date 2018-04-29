@@ -23,6 +23,7 @@ Partial Class Hauptfenster
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Hauptfenster))
         Me.Ribbon1 = New System.Windows.Forms.Ribbon()
         Me.RibbonOrbMenuItem1 = New System.Windows.Forms.RibbonOrbMenuItem()
@@ -36,15 +37,18 @@ Partial Class Hauptfenster
         Me.RibbonButton_Importieren = New System.Windows.Forms.RibbonButton()
         Me.RibbonPanelEinlesen = New System.Windows.Forms.RibbonPanel()
         Me.RibbonButtonEinlesen = New System.Windows.Forms.RibbonButton()
+        Me.RibbonPanelEinstellungen = New System.Windows.Forms.RibbonPanel()
+        Me.RibbonButtonEinstellungen = New System.Windows.Forms.RibbonButton()
+        Me.RibbonPanelAktualisieren = New System.Windows.Forms.RibbonPanel()
+        Me.RibbonButtonAktualisieren = New System.Windows.Forms.RibbonButton()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.DataSet1 = New System.Data.DataSet()
-        Me.btn_Einstellungen = New System.Windows.Forms.Button()
         Me.RibbonButton1 = New System.Windows.Forms.RibbonButton()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.tbFilter = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Ribbon1
@@ -132,6 +136,8 @@ Partial Class Hauptfenster
         Me.ribbontab_Importieren.Name = "ribbontab_Importieren"
         Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanel_Importieren)
         Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanelEinlesen)
+        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanelEinstellungen)
+        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanelAktualisieren)
         Me.ribbontab_Importieren.Text = "Importieren"
         '
         'RibbonPanel_Importieren
@@ -160,14 +166,31 @@ Partial Class Hauptfenster
         Me.RibbonButtonEinlesen.Name = "RibbonButtonEinlesen"
         Me.RibbonButtonEinlesen.SmallImage = CType(resources.GetObject("RibbonButtonEinlesen.SmallImage"), System.Drawing.Image)
         '
-        'btnRefresh
+        'RibbonPanelEinstellungen
         '
-        Me.btnRefresh.Location = New System.Drawing.Point(58, 182)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(75, 23)
-        Me.btnRefresh.TabIndex = 2
-        Me.btnRefresh.Text = "Aktualisieren"
-        Me.btnRefresh.UseVisualStyleBackColor = True
+        Me.RibbonPanelEinstellungen.Items.Add(Me.RibbonButtonEinstellungen)
+        Me.RibbonPanelEinstellungen.Name = "RibbonPanelEinstellungen"
+        Me.RibbonPanelEinstellungen.Text = "Einstellungen"
+        '
+        'RibbonButtonEinstellungen
+        '
+        Me.RibbonButtonEinstellungen.Image = CType(resources.GetObject("RibbonButtonEinstellungen.Image"), System.Drawing.Image)
+        Me.RibbonButtonEinstellungen.LargeImage = CType(resources.GetObject("RibbonButtonEinstellungen.LargeImage"), System.Drawing.Image)
+        Me.RibbonButtonEinstellungen.Name = "RibbonButtonEinstellungen"
+        Me.RibbonButtonEinstellungen.SmallImage = CType(resources.GetObject("RibbonButtonEinstellungen.SmallImage"), System.Drawing.Image)
+        '
+        'RibbonPanelAktualisieren
+        '
+        Me.RibbonPanelAktualisieren.Items.Add(Me.RibbonButtonAktualisieren)
+        Me.RibbonPanelAktualisieren.Name = "RibbonPanelAktualisieren"
+        Me.RibbonPanelAktualisieren.Text = "Aktualisieren"
+        '
+        'RibbonButtonAktualisieren
+        '
+        Me.RibbonButtonAktualisieren.Image = CType(resources.GetObject("RibbonButtonAktualisieren.Image"), System.Drawing.Image)
+        Me.RibbonButtonAktualisieren.LargeImage = CType(resources.GetObject("RibbonButtonAktualisieren.LargeImage"), System.Drawing.Image)
+        Me.RibbonButtonAktualisieren.Name = "RibbonButtonAktualisieren"
+        Me.RibbonButtonAktualisieren.SmallImage = CType(resources.GetObject("RibbonButtonAktualisieren.SmallImage"), System.Drawing.Image)
         '
         'DataGridView1
         '
@@ -190,19 +213,6 @@ Partial Class Hauptfenster
         Me.btnAdd.Text = "Hinzufügen"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "NewDataSet"
-        '
-        'btn_Einstellungen
-        '
-        Me.btn_Einstellungen.Location = New System.Drawing.Point(661, 153)
-        Me.btn_Einstellungen.Name = "btn_Einstellungen"
-        Me.btn_Einstellungen.Size = New System.Drawing.Size(100, 23)
-        Me.btn_Einstellungen.TabIndex = 5
-        Me.btn_Einstellungen.Text = "Einstellungen"
-        Me.btn_Einstellungen.UseVisualStyleBackColor = True
-        '
         'RibbonButton1
         '
         Me.RibbonButton1.Image = CType(resources.GetObject("RibbonButton1.Image"), System.Drawing.Image)
@@ -210,22 +220,29 @@ Partial Class Hauptfenster
         Me.RibbonButton1.Name = "RibbonButton1"
         Me.RibbonButton1.SmallImage = CType(resources.GetObject("RibbonButton1.SmallImage"), System.Drawing.Image)
         '
+        'tbFilter
+        '
+        Me.tbFilter.Location = New System.Drawing.Point(139, 156)
+        Me.tbFilter.Name = "tbFilter"
+        Me.tbFilter.Size = New System.Drawing.Size(622, 20)
+        Me.tbFilter.TabIndex = 5
+        '
         'Hauptfenster
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1400, 555)
-        Me.Controls.Add(Me.btn_Einstellungen)
+        Me.Controls.Add(Me.tbFilter)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.Ribbon1)
         Me.KeyPreview = True
         Me.Name = "Hauptfenster"
         Me.Text = "Hauptfenster"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -244,13 +261,16 @@ Partial Class Hauptfenster
     Friend WithEvents RibbonContext3 As RibbonContext
     Friend WithEvents RibbonContext4 As RibbonContext
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
-    Friend WithEvents btnRefresh As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnAdd As Button
-    Friend WithEvents DataSet1 As DataSet
     Friend WithEvents RibbonPanel1 As RibbonPanel
     Friend WithEvents RibbonPanelEinlesen As RibbonPanel
     Friend WithEvents RibbonButtonEinlesen As RibbonButton
-    Friend WithEvents btn_Einstellungen As Button
     Friend WithEvents RibbonButton1 As System.Windows.Forms.RibbonButton
+    Friend WithEvents RibbonPanelEinstellungen As RibbonPanel
+    Friend WithEvents RibbonButtonEinstellungen As RibbonButton
+    Friend WithEvents RibbonPanelAktualisieren As RibbonPanel
+    Friend WithEvents RibbonButtonAktualisieren As RibbonButton
+    Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents tbFilter As TextBox
 End Class

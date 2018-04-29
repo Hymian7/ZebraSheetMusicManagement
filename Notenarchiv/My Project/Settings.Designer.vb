@@ -54,22 +54,52 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public ReadOnly Property ArchivePath() As String
+        Public Property ArchivePath() As String
             Get
                 Return CType(Me("ArchivePath"),String)
             End Get
+            Set
+                Me("ArchivePath") = value
+            End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\database\db.accdb")>  _
-        Public ReadOnly Property DBPath() As String
+        Public Property DBPath() As String
             Get
                 Return CType(Me("DBPath"),String)
             End Get
+            Set
+                Me("DBPath") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("6")>  _
+        Public Property NotensatzNrLength() As Byte
+            Get
+                Return CType(Me("NotensatzNrLength"),Byte)
+            End Get
+            Set
+                Me("NotensatzNrLength") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("3")>  _
+        Public Property StimmeNrLength() As Byte
+            Get
+                Return CType(Me("StimmeNrLength"),Byte)
+            End Get
+            Set
+                Me("StimmeNrLength") = value
+            End Set
         End Property
     End Class
 End Namespace
