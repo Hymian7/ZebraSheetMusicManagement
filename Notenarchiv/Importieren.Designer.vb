@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Einlesen
+Partial Class Importieren
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -72,7 +72,7 @@ Partial Class Einlesen
         Me.btnEinlesen.Text = "Einlesen"
         Me.btnEinlesen.UseVisualStyleBackColor = True
         '
-        'Einlesen
+        'Importieren
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -82,8 +82,8 @@ Partial Class Einlesen
         Me.Controls.Add(Me.lbNotensatz)
         Me.Controls.Add(Me.btnBrowse)
         Me.Controls.Add(Me.tbPfad)
-        Me.Name = "Einlesen"
-        Me.Text = "Einlesen"
+        Me.Name = "Importieren"
+        Me.Text = "Importieren"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

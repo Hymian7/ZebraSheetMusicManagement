@@ -61,7 +61,6 @@ D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Notenarchiv.
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Notenarchiv.pdb
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\Notenarchiv.xml
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Detail.resources
-D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Einlesen.resources
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Einstellungen.resources
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Sortierer.resources
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Hauptfenster.resources
@@ -69,3 +68,5 @@ D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.exe
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.xml
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.pdb
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Notensätze.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Importieren.resources

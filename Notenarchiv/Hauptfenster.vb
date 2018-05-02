@@ -6,80 +6,90 @@ Public Class Hauptfenster
 
     Public Sub New()
 
-        ' This call is required by the designer.
+        ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
 
-        ' Add any initialization after the InitializeComponent() call.
-        AddHandler Detail.NotensatzAktualisiert, AddressOf TabelleAktualisieren
-        AddHandler RibbonButtonAktualisieren.Click, AddressOf TabelleAktualisieren
-        AddHandler Me.Shown, AddressOf TabelleAktualisieren
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+        AddHandler RibbonButtonNotensätze.Click, AddressOf ChangeMode
+        AddHandler RibbonButtonBarcodes.Click, AddressOf ChangeMode
+        AddHandler RibbonButtonImport.Click, AddressOf ChangeMode
+        AddHandler RibbonButtonInhaltsverzeichnisse.Click, AddressOf ChangeMode
+        AddHandler RibbonButtonStimmen.Click, AddressOf ChangeMode
+
+        ChangeMode(RibbonButtonNotensätze, EventArgs.Empty)
 
     End Sub
 
-    Private Sub RibbonButton_Importieren_Click(sender As Object, e As EventArgs) Handles RibbonButton_Importieren.Click
-        Sortierer.Show()
-    End Sub
-
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-
-        'Mit diesem Button werden alle Unterordner des im FolderBrowserDialog ausgewählten Pfades mit Standardwerten
-        'für Titel und Arrangeur und dem Ordnernamen als ID in die Datenbank geschrieben
-
-        If FolderBrowserDialog1.ShowDialog = DialogResult.OK Then
-
-            For Each dir As String In Directory.GetDirectories(FolderBrowserDialog1.SelectedPath)
-
-                'Jeden gefundenen Ordner in dem Arbeitsordner als Notensatz anlegen
-                Dim ns As New Notensatz(Strings.Right(dir, My.Settings.NotensatzNrLength))
-                ns.InDatenbankAnlegen()
-
-            Next
-
-        End If
+    Private Sub RibbonButtonNotensätze_Click(sender As Object, e As EventArgs) Handles RibbonButtonNotensätze.Click
 
     End Sub
 
-    Private Sub DataGridView1_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseDoubleClick
-        'MsgBox(DataGridView1.CurrentCell.Value)
+    Private Sub ChangeMode(sender As Object, ByVal e As EventArgs)
 
-        'Detail.ShowData(DataGridView1.CurrentCell.Value)
-        Detail.ShowData(New Notensatz(DataGridView1.CurrentRow.Cells(0).Value))
+        For Each rb As RibbonButton In RibbonPanelModus.Items
 
+            If rb.Name = sender.name Then
+                rb.Checked = True
+            Else
+                rb.Checked = False
+            End If
 
-    End Sub
+        Next
 
-    Private Sub DataGridView1_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseClick
-        'Auswerten eines Rechtsklicks
-        'TODO: Eventuell ContextMenu einfügen
+        For Each mdichild In Me.MdiChildren
+            If Not sender.text = mdichild.Name Then
+                mdichild.Hide()
+            End If
+        Next
 
-        If e.Button = MouseButtons.Right Then MsgBox("Rechtsklick")
-    End Sub
-
-    Private Sub RibbonButtonEinlesen_Click(sender As Object, e As EventArgs) Handles RibbonButtonEinlesen.Click
-        'Öffnet das Fenster Einlesen
-        Einlesen.Show()
-
-    End Sub
-
-    Private Sub TabelleAktualisieren()
-
-        'Daten aus tbl_Notensatz werden in die BindingSource gelesen und in der DataGridView angezeigt
-
-        BindingSource1.DataSource = GetSQL("SELECT * FROM tbl_Notensatz")
-        DataGridView1.DataSource = BindingSource1
+        ShowFormByName(sender.text)
 
     End Sub
 
-    Private Sub RibbonButtonEinstellungen_Click(sender As Object, e As EventArgs) Handles RibbonButtonEinstellungen.Click
+    Public Sub ShowFormByName(ByVal FormName As String)
+        ' Erzeugt eine neue Instanz einer Form auf Basis des
+        ' Klassennamens der Form (z.B. "Form1") und zeigt
+        ' diese neue Instanz an.
 
-        'Einstellungsfenster öffnen
+        Try
+
+            ' Referenz auf die ausgeführte (diese) Assembly holen
+            Dim myAssembly As System.Reflection.Assembly _
+                            = System.Reflection.Assembly.GetExecutingAssembly()
+
+            ' Den Namen der Assembly ermitteln:
+            Dim strAssemblyName As String = myAssembly.GetName().Name.ToString
+
+            ' Den kompletten Namen (inkl. Assemblynamen) des Form-Typs ermitteln
+            ' (diese Zeile sorgt zudem für Toleranz bzgl. Groß-/Kleinschreibung):
+            Dim FullName As String _
+                         = myAssembly.GetType(strAssemblyName & "." & FormName, False, True).ToString
+
+            ' Form instanzieren und Formvariable zuweisen
+            Dim myForm As System.Windows.Forms.Form _
+                       = CType(myAssembly.CreateInstance(FullName),
+                               System.Windows.Forms.Form)
+            myForm.WindowState = FormWindowState.Maximized
+
+            ' Die erzeugte Instanz anzeigen
+            myForm.MdiParent = Me
+            myForm.Show()
+
+        Catch ex As System.NullReferenceException
+
+            ' Formname existiert nicht - Standard: Keine Reaktion zeigen.
+            ' Natürlich können Sie hier auch andere Reaktionen vorsehen.
+
+        Catch ex As Exception
+
+            ' Anderer Fehler, Fehlermeldung anzeigen.
+            MessageBox.Show(ex.Message)
+
+        End Try
+
+    End Sub
+
+    Private Sub RibbonOrbMenuItemEinstellungen_Click(sender As Object, e As EventArgs) Handles RibbonOrbMenuItemEinstellungen.Click
         Einstellungen.Show()
-    End Sub
-
-    Private Sub tbFilter_TextChanged(sender As Object, e As EventArgs) Handles tbFilter.TextChanged
-        'Filter aus tbFilter übernehmen
-        'Filter funktioniert bisher mit Wildcards
-
-        BindingSource1.Filter = String.Format("dt_NotensatzName LIKE '*{0}*' OR id_NotensatzNr LIKE '*{0}*' OR dt_ArrangeurName LIKE '*{0}*'", tbFilter.Text)
     End Sub
 End Class

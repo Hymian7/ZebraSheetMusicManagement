@@ -23,32 +23,22 @@ Partial Class Hauptfenster
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Hauptfenster))
         Me.Ribbon1 = New System.Windows.Forms.Ribbon()
-        Me.RibbonOrbMenuItem1 = New System.Windows.Forms.RibbonOrbMenuItem()
-        Me.RibbonOrbMenuItem2 = New System.Windows.Forms.RibbonOrbMenuItem()
-        Me.RibbonOrbMenuItem3 = New System.Windows.Forms.RibbonOrbMenuItem()
-        Me.RibbonOrbOptionButton1 = New System.Windows.Forms.RibbonOrbOptionButton()
-        Me.RibbonOrbOptionButton2 = New System.Windows.Forms.RibbonOrbOptionButton()
-        Me.RibbonOrbRecentItem1 = New System.Windows.Forms.RibbonOrbRecentItem()
-        Me.ribbontab_Importieren = New System.Windows.Forms.RibbonTab()
-        Me.RibbonPanel_Importieren = New System.Windows.Forms.RibbonPanel()
-        Me.RibbonButton_Importieren = New System.Windows.Forms.RibbonButton()
-        Me.RibbonPanelEinlesen = New System.Windows.Forms.RibbonPanel()
-        Me.RibbonButtonEinlesen = New System.Windows.Forms.RibbonButton()
-        Me.RibbonPanelEinstellungen = New System.Windows.Forms.RibbonPanel()
-        Me.RibbonButtonEinstellungen = New System.Windows.Forms.RibbonButton()
-        Me.RibbonPanelAktualisieren = New System.Windows.Forms.RibbonPanel()
-        Me.RibbonButtonAktualisieren = New System.Windows.Forms.RibbonButton()
-        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.ribbontab_Start = New System.Windows.Forms.RibbonTab()
+        Me.RibbonPanelModus = New System.Windows.Forms.RibbonPanel()
+        Me.RibbonButtonNotensätze = New System.Windows.Forms.RibbonButton()
+        Me.RibbonButtonBarcodes = New System.Windows.Forms.RibbonButton()
+        Me.RibbonButtonImport = New System.Windows.Forms.RibbonButton()
+        Me.RibbonButtonInhaltsverzeichnisse = New System.Windows.Forms.RibbonButton()
+        Me.RibbonButtonStimmen = New System.Windows.Forms.RibbonButton()
+        Me.RibbonTabNotensatz = New System.Windows.Forms.RibbonTab()
+        Me.RibbonTabBarcode = New System.Windows.Forms.RibbonTab()
+        Me.RibbonTabImport = New System.Windows.Forms.RibbonTab()
+        Me.RibbonTabInhaltsverzeichnis = New System.Windows.Forms.RibbonTab()
+        Me.RibbonTabStimme = New System.Windows.Forms.RibbonTab()
         Me.RibbonButton1 = New System.Windows.Forms.RibbonButton()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.tbFilter = New System.Windows.Forms.TextBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RibbonOrbMenuItemEinstellungen = New System.Windows.Forms.RibbonOrbMenuItem()
         Me.SuspendLayout()
         '
         'Ribbon1
@@ -62,156 +52,116 @@ Partial Class Hauptfenster
         '
         Me.Ribbon1.OrbDropDown.BorderRoundness = 8
         Me.Ribbon1.OrbDropDown.Location = New System.Drawing.Point(0, 0)
-        Me.Ribbon1.OrbDropDown.MenuItems.Add(Me.RibbonOrbMenuItem1)
-        Me.Ribbon1.OrbDropDown.MenuItems.Add(Me.RibbonOrbMenuItem2)
-        Me.Ribbon1.OrbDropDown.MenuItems.Add(Me.RibbonOrbMenuItem3)
+        Me.Ribbon1.OrbDropDown.MenuItems.Add(Me.RibbonOrbMenuItemEinstellungen)
         Me.Ribbon1.OrbDropDown.Name = ""
-        Me.Ribbon1.OrbDropDown.OptionItems.Add(Me.RibbonOrbOptionButton1)
-        Me.Ribbon1.OrbDropDown.OptionItems.Add(Me.RibbonOrbOptionButton2)
-        Me.Ribbon1.OrbDropDown.RecentItems.Add(Me.RibbonOrbRecentItem1)
-        Me.Ribbon1.OrbDropDown.Size = New System.Drawing.Size(527, 204)
+        Me.Ribbon1.OrbDropDown.Size = New System.Drawing.Size(527, 116)
         Me.Ribbon1.OrbDropDown.TabIndex = 0
         Me.Ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013
+        Me.Ribbon1.OrbText = "Zebra"
         Me.Ribbon1.RibbonTabFont = New System.Drawing.Font("Trebuchet MS", 9.0!)
-        Me.Ribbon1.Size = New System.Drawing.Size(1400, 131)
+        Me.Ribbon1.Size = New System.Drawing.Size(1601, 161)
         Me.Ribbon1.TabIndex = 0
-        Me.Ribbon1.Tabs.Add(Me.ribbontab_Importieren)
+        Me.Ribbon1.Tabs.Add(Me.ribbontab_Start)
+        Me.Ribbon1.Tabs.Add(Me.RibbonTabNotensatz)
+        Me.Ribbon1.Tabs.Add(Me.RibbonTabBarcode)
+        Me.Ribbon1.Tabs.Add(Me.RibbonTabImport)
+        Me.Ribbon1.Tabs.Add(Me.RibbonTabInhaltsverzeichnis)
+        Me.Ribbon1.Tabs.Add(Me.RibbonTabStimme)
         Me.Ribbon1.TabsMargin = New System.Windows.Forms.Padding(5, 26, 20, 0)
         Me.Ribbon1.TabSpacing = 4
         Me.Ribbon1.Text = "Ribbon1"
         '
-        'RibbonOrbMenuItem1
+        'ribbontab_Start
         '
-        Me.RibbonOrbMenuItem1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left
-        Me.RibbonOrbMenuItem1.Image = CType(resources.GetObject("RibbonOrbMenuItem1.Image"), System.Drawing.Image)
-        Me.RibbonOrbMenuItem1.LargeImage = CType(resources.GetObject("RibbonOrbMenuItem1.LargeImage"), System.Drawing.Image)
-        Me.RibbonOrbMenuItem1.Name = "RibbonOrbMenuItem1"
-        Me.RibbonOrbMenuItem1.SmallImage = CType(resources.GetObject("RibbonOrbMenuItem1.SmallImage"), System.Drawing.Image)
-        Me.RibbonOrbMenuItem1.Text = "RibbonOrbMenuItem1"
+        Me.ribbontab_Start.Name = "ribbontab_Start"
+        Me.ribbontab_Start.Panels.Add(Me.RibbonPanelModus)
+        Me.ribbontab_Start.Text = "Start"
         '
-        'RibbonOrbMenuItem2
+        'RibbonPanelModus
         '
-        Me.RibbonOrbMenuItem2.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left
-        Me.RibbonOrbMenuItem2.Image = CType(resources.GetObject("RibbonOrbMenuItem2.Image"), System.Drawing.Image)
-        Me.RibbonOrbMenuItem2.LargeImage = CType(resources.GetObject("RibbonOrbMenuItem2.LargeImage"), System.Drawing.Image)
-        Me.RibbonOrbMenuItem2.Name = "RibbonOrbMenuItem2"
-        Me.RibbonOrbMenuItem2.SmallImage = CType(resources.GetObject("RibbonOrbMenuItem2.SmallImage"), System.Drawing.Image)
-        Me.RibbonOrbMenuItem2.Text = "RibbonOrbMenuItem2"
+        Me.RibbonPanelModus.Items.Add(Me.RibbonButtonNotensätze)
+        Me.RibbonPanelModus.Items.Add(Me.RibbonButtonBarcodes)
+        Me.RibbonPanelModus.Items.Add(Me.RibbonButtonImport)
+        Me.RibbonPanelModus.Items.Add(Me.RibbonButtonInhaltsverzeichnisse)
+        Me.RibbonPanelModus.Items.Add(Me.RibbonButtonStimmen)
+        Me.RibbonPanelModus.Name = "RibbonPanelModus"
+        Me.RibbonPanelModus.Text = "Modus"
         '
-        'RibbonOrbMenuItem3
+        'RibbonButtonNotensätze
         '
-        Me.RibbonOrbMenuItem3.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left
-        Me.RibbonOrbMenuItem3.Image = CType(resources.GetObject("RibbonOrbMenuItem3.Image"), System.Drawing.Image)
-        Me.RibbonOrbMenuItem3.LargeImage = CType(resources.GetObject("RibbonOrbMenuItem3.LargeImage"), System.Drawing.Image)
-        Me.RibbonOrbMenuItem3.Name = "RibbonOrbMenuItem3"
-        Me.RibbonOrbMenuItem3.SmallImage = CType(resources.GetObject("RibbonOrbMenuItem3.SmallImage"), System.Drawing.Image)
-        Me.RibbonOrbMenuItem3.Text = "RibbonOrbMenuItem3"
+        Me.RibbonButtonNotensätze.Image = Global.Notenarchiv.My.Resources.Resources.sheet_music
+        Me.RibbonButtonNotensätze.LargeImage = Global.Notenarchiv.My.Resources.Resources.sheet_music
+        Me.RibbonButtonNotensätze.MaximumSize = New System.Drawing.Size(84, 84)
+        Me.RibbonButtonNotensätze.MinimumSize = New System.Drawing.Size(84, 64)
+        Me.RibbonButtonNotensätze.Name = "RibbonButtonNotensätze"
+        Me.RibbonButtonNotensätze.SmallImage = Global.Notenarchiv.My.Resources.Resources.sheet_music32
+        Me.RibbonButtonNotensätze.Text = "Notensätze"
+        Me.RibbonButtonNotensätze.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center
+        Me.RibbonButtonNotensätze.ToolTipTitle = "Notensätze"
         '
-        'RibbonOrbOptionButton1
+        'RibbonButtonBarcodes
         '
-        Me.RibbonOrbOptionButton1.Image = CType(resources.GetObject("RibbonOrbOptionButton1.Image"), System.Drawing.Image)
-        Me.RibbonOrbOptionButton1.LargeImage = CType(resources.GetObject("RibbonOrbOptionButton1.LargeImage"), System.Drawing.Image)
-        Me.RibbonOrbOptionButton1.Name = "RibbonOrbOptionButton1"
-        Me.RibbonOrbOptionButton1.SmallImage = CType(resources.GetObject("RibbonOrbOptionButton1.SmallImage"), System.Drawing.Image)
-        Me.RibbonOrbOptionButton1.Text = "RibbonOrbOptionButton1"
+        Me.RibbonButtonBarcodes.Image = Global.Notenarchiv.My.Resources.Resources.barcode64
+        Me.RibbonButtonBarcodes.LargeImage = Global.Notenarchiv.My.Resources.Resources.barcode64
+        Me.RibbonButtonBarcodes.MaximumSize = New System.Drawing.Size(84, 84)
+        Me.RibbonButtonBarcodes.MinimumSize = New System.Drawing.Size(84, 64)
+        Me.RibbonButtonBarcodes.Name = "RibbonButtonBarcodes"
+        Me.RibbonButtonBarcodes.SmallImage = Global.Notenarchiv.My.Resources.Resources.barcode32
+        Me.RibbonButtonBarcodes.Tag = "Barcodes"
+        Me.RibbonButtonBarcodes.Text = "Barcodes"
         '
-        'RibbonOrbOptionButton2
+        'RibbonButtonImport
         '
-        Me.RibbonOrbOptionButton2.Image = CType(resources.GetObject("RibbonOrbOptionButton2.Image"), System.Drawing.Image)
-        Me.RibbonOrbOptionButton2.LargeImage = CType(resources.GetObject("RibbonOrbOptionButton2.LargeImage"), System.Drawing.Image)
-        Me.RibbonOrbOptionButton2.Name = "RibbonOrbOptionButton2"
-        Me.RibbonOrbOptionButton2.SmallImage = CType(resources.GetObject("RibbonOrbOptionButton2.SmallImage"), System.Drawing.Image)
-        Me.RibbonOrbOptionButton2.Text = "RibbonOrbOptionButton2"
+        Me.RibbonButtonImport.Image = Global.Notenarchiv.My.Resources.Resources.import64
+        Me.RibbonButtonImport.LargeImage = Global.Notenarchiv.My.Resources.Resources.import64
+        Me.RibbonButtonImport.MaximumSize = New System.Drawing.Size(84, 84)
+        Me.RibbonButtonImport.MinimumSize = New System.Drawing.Size(84, 64)
+        Me.RibbonButtonImport.Name = "RibbonButtonImport"
+        Me.RibbonButtonImport.SmallImage = Global.Notenarchiv.My.Resources.Resources.import32
+        Me.RibbonButtonImport.Text = "Importieren"
         '
-        'RibbonOrbRecentItem1
+        'RibbonButtonInhaltsverzeichnisse
         '
-        Me.RibbonOrbRecentItem1.Image = CType(resources.GetObject("RibbonOrbRecentItem1.Image"), System.Drawing.Image)
-        Me.RibbonOrbRecentItem1.LargeImage = CType(resources.GetObject("RibbonOrbRecentItem1.LargeImage"), System.Drawing.Image)
-        Me.RibbonOrbRecentItem1.Name = "RibbonOrbRecentItem1"
-        Me.RibbonOrbRecentItem1.SmallImage = CType(resources.GetObject("RibbonOrbRecentItem1.SmallImage"), System.Drawing.Image)
-        Me.RibbonOrbRecentItem1.Text = "RibbonOrbRecentItem1"
+        Me.RibbonButtonInhaltsverzeichnisse.Image = Global.Notenarchiv.My.Resources.Resources.numbered_list64
+        Me.RibbonButtonInhaltsverzeichnisse.LargeImage = Global.Notenarchiv.My.Resources.Resources.numbered_list64
+        Me.RibbonButtonInhaltsverzeichnisse.MaximumSize = New System.Drawing.Size(124, 84)
+        Me.RibbonButtonInhaltsverzeichnisse.MinimumSize = New System.Drawing.Size(124, 64)
+        Me.RibbonButtonInhaltsverzeichnisse.Name = "RibbonButtonInhaltsverzeichnisse"
+        Me.RibbonButtonInhaltsverzeichnisse.SmallImage = CType(resources.GetObject("RibbonButtonInhaltsverzeichnisse.SmallImage"), System.Drawing.Image)
+        Me.RibbonButtonInhaltsverzeichnisse.Text = "Inhaltsverzeichnisse"
         '
-        'ribbontab_Importieren
+        'RibbonButtonStimmen
         '
-        Me.ribbontab_Importieren.Name = "ribbontab_Importieren"
-        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanel_Importieren)
-        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanelEinlesen)
-        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanelEinstellungen)
-        Me.ribbontab_Importieren.Panels.Add(Me.RibbonPanelAktualisieren)
-        Me.ribbontab_Importieren.Text = "Importieren"
+        Me.RibbonButtonStimmen.Image = Global.Notenarchiv.My.Resources.Resources.bass_clef64
+        Me.RibbonButtonStimmen.LargeImage = Global.Notenarchiv.My.Resources.Resources.bass_clef64
+        Me.RibbonButtonStimmen.Name = "RibbonButtonStimmen"
+        Me.RibbonButtonStimmen.SmallImage = Global.Notenarchiv.My.Resources.Resources.bass_clef32
+        Me.RibbonButtonStimmen.Text = "Stimmen"
         '
-        'RibbonPanel_Importieren
+        'RibbonTabNotensatz
         '
-        Me.RibbonPanel_Importieren.Items.Add(Me.RibbonButton_Importieren)
-        Me.RibbonPanel_Importieren.Name = "RibbonPanel_Importieren"
-        Me.RibbonPanel_Importieren.Text = "Daten Importieren"
+        Me.RibbonTabNotensatz.Name = "RibbonTabNotensatz"
+        Me.RibbonTabNotensatz.Text = "Notensatz"
         '
-        'RibbonButton_Importieren
+        'RibbonTabBarcode
         '
-        Me.RibbonButton_Importieren.Image = Global.Notenarchiv.My.Resources.Resources.insert
-        Me.RibbonButton_Importieren.LargeImage = Global.Notenarchiv.My.Resources.Resources.insert
-        Me.RibbonButton_Importieren.Name = "RibbonButton_Importieren"
-        Me.RibbonButton_Importieren.SmallImage = Global.Notenarchiv.My.Resources.Resources.insert
+        Me.RibbonTabBarcode.Name = "RibbonTabBarcode"
+        Me.RibbonTabBarcode.Text = "Barcode"
         '
-        'RibbonPanelEinlesen
+        'RibbonTabImport
         '
-        Me.RibbonPanelEinlesen.Items.Add(Me.RibbonButtonEinlesen)
-        Me.RibbonPanelEinlesen.Name = "RibbonPanelEinlesen"
-        Me.RibbonPanelEinlesen.Text = "Einlesen"
+        Me.RibbonTabImport.Name = "RibbonTabImport"
+        Me.RibbonTabImport.Text = "Import"
         '
-        'RibbonButtonEinlesen
+        'RibbonTabInhaltsverzeichnis
         '
-        Me.RibbonButtonEinlesen.Image = CType(resources.GetObject("RibbonButtonEinlesen.Image"), System.Drawing.Image)
-        Me.RibbonButtonEinlesen.LargeImage = CType(resources.GetObject("RibbonButtonEinlesen.LargeImage"), System.Drawing.Image)
-        Me.RibbonButtonEinlesen.Name = "RibbonButtonEinlesen"
-        Me.RibbonButtonEinlesen.SmallImage = CType(resources.GetObject("RibbonButtonEinlesen.SmallImage"), System.Drawing.Image)
+        Me.RibbonTabInhaltsverzeichnis.Name = "RibbonTabInhaltsverzeichnis"
+        Me.RibbonTabInhaltsverzeichnis.Text = "Inhaltsverzeichnis"
         '
-        'RibbonPanelEinstellungen
+        'RibbonTabStimme
         '
-        Me.RibbonPanelEinstellungen.Items.Add(Me.RibbonButtonEinstellungen)
-        Me.RibbonPanelEinstellungen.Name = "RibbonPanelEinstellungen"
-        Me.RibbonPanelEinstellungen.Text = "Einstellungen"
-        '
-        'RibbonButtonEinstellungen
-        '
-        Me.RibbonButtonEinstellungen.Image = CType(resources.GetObject("RibbonButtonEinstellungen.Image"), System.Drawing.Image)
-        Me.RibbonButtonEinstellungen.LargeImage = CType(resources.GetObject("RibbonButtonEinstellungen.LargeImage"), System.Drawing.Image)
-        Me.RibbonButtonEinstellungen.Name = "RibbonButtonEinstellungen"
-        Me.RibbonButtonEinstellungen.SmallImage = CType(resources.GetObject("RibbonButtonEinstellungen.SmallImage"), System.Drawing.Image)
-        '
-        'RibbonPanelAktualisieren
-        '
-        Me.RibbonPanelAktualisieren.Items.Add(Me.RibbonButtonAktualisieren)
-        Me.RibbonPanelAktualisieren.Name = "RibbonPanelAktualisieren"
-        Me.RibbonPanelAktualisieren.Text = "Aktualisieren"
-        '
-        'RibbonButtonAktualisieren
-        '
-        Me.RibbonButtonAktualisieren.Image = CType(resources.GetObject("RibbonButtonAktualisieren.Image"), System.Drawing.Image)
-        Me.RibbonButtonAktualisieren.LargeImage = CType(resources.GetObject("RibbonButtonAktualisieren.LargeImage"), System.Drawing.Image)
-        Me.RibbonButtonAktualisieren.Name = "RibbonButtonAktualisieren"
-        Me.RibbonButtonAktualisieren.SmallImage = CType(resources.GetObject("RibbonButtonAktualisieren.SmallImage"), System.Drawing.Image)
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(139, 182)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.DataGridView1.Size = New System.Drawing.Size(622, 325)
-        Me.DataGridView1.TabIndex = 3
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(58, 211)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdd.TabIndex = 4
-        Me.btnAdd.Text = "Hinzufügen"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.RibbonTabStimme.Name = "RibbonTabStimme"
+        Me.RibbonTabStimme.Text = "Stimme"
         '
         'RibbonButton1
         '
@@ -220,36 +170,33 @@ Partial Class Hauptfenster
         Me.RibbonButton1.Name = "RibbonButton1"
         Me.RibbonButton1.SmallImage = CType(resources.GetObject("RibbonButton1.SmallImage"), System.Drawing.Image)
         '
-        'tbFilter
+        'RibbonOrbMenuItemEinstellungen
         '
-        Me.tbFilter.Location = New System.Drawing.Point(139, 156)
-        Me.tbFilter.Name = "tbFilter"
-        Me.tbFilter.Size = New System.Drawing.Size(622, 20)
-        Me.tbFilter.TabIndex = 5
+        Me.RibbonOrbMenuItemEinstellungen.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left
+        Me.RibbonOrbMenuItemEinstellungen.Image = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.Image"), System.Drawing.Image)
+        Me.RibbonOrbMenuItemEinstellungen.LargeImage = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.LargeImage"), System.Drawing.Image)
+        Me.RibbonOrbMenuItemEinstellungen.Name = "RibbonOrbMenuItemEinstellungen"
+        Me.RibbonOrbMenuItemEinstellungen.SmallImage = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.SmallImage"), System.Drawing.Image)
+        Me.RibbonOrbMenuItemEinstellungen.Text = "Einstellungen"
         '
         'Hauptfenster
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1400, 555)
-        Me.Controls.Add(Me.tbFilter)
-        Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(1601, 816)
         Me.Controls.Add(Me.Ribbon1)
+        Me.IsMdiContainer = True
         Me.KeyPreview = True
         Me.Name = "Hauptfenster"
         Me.Text = "Hauptfenster"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Ribbon1 As Ribbon
-    Friend WithEvents ribbontab_Importieren As RibbonTab
-    Friend WithEvents RibbonPanel_Importieren As RibbonPanel
-    Friend WithEvents RibbonButton_Importieren As RibbonButton
+    Friend WithEvents ribbontab_Start As RibbonTab
+    Friend WithEvents RibbonPanelModus As RibbonPanel
     Friend WithEvents RibbonOrbMenuItem1 As RibbonOrbMenuItem
     Friend WithEvents RibbonOrbMenuItem2 As RibbonOrbMenuItem
     Friend WithEvents RibbonOrbMenuItem3 As RibbonOrbMenuItem
@@ -260,17 +207,17 @@ Partial Class Hauptfenster
     Friend WithEvents RibbonContext2 As RibbonContext
     Friend WithEvents RibbonContext3 As RibbonContext
     Friend WithEvents RibbonContext4 As RibbonContext
-    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents btnAdd As Button
     Friend WithEvents RibbonPanel1 As RibbonPanel
-    Friend WithEvents RibbonPanelEinlesen As RibbonPanel
-    Friend WithEvents RibbonButtonEinlesen As RibbonButton
     Friend WithEvents RibbonButton1 As System.Windows.Forms.RibbonButton
-    Friend WithEvents RibbonPanelEinstellungen As RibbonPanel
-    Friend WithEvents RibbonButtonEinstellungen As RibbonButton
-    Friend WithEvents RibbonPanelAktualisieren As RibbonPanel
-    Friend WithEvents RibbonButtonAktualisieren As RibbonButton
-    Friend WithEvents BindingSource1 As BindingSource
-    Friend WithEvents tbFilter As TextBox
+    Friend WithEvents RibbonTabNotensatz As RibbonTab
+    Friend WithEvents RibbonTabBarcode As RibbonTab
+    Friend WithEvents RibbonTabImport As RibbonTab
+    Friend WithEvents RibbonTabInhaltsverzeichnis As RibbonTab
+    Friend WithEvents RibbonTabStimme As RibbonTab
+    Friend WithEvents RibbonButtonNotensätze As RibbonButton
+    Friend WithEvents RibbonButtonBarcodes As RibbonButton
+    Friend WithEvents RibbonButtonImport As RibbonButton
+    Friend WithEvents RibbonButtonInhaltsverzeichnisse As RibbonButton
+    Friend WithEvents RibbonButtonStimmen As RibbonButton
+    Friend WithEvents RibbonOrbMenuItemEinstellungen As RibbonOrbMenuItem
 End Class

@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 
-Public Class Einlesen
+Public Class Importieren
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
 
         tbPfad.Clear()

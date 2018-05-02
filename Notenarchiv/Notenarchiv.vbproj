@@ -151,10 +151,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DinA3Splitter.vb" />
-    <Compile Include="Einlesen.Designer.vb">
-      <DependentUpon>Einlesen.vb</DependentUpon>
+    <Compile Include="Importieren.Designer.vb">
+      <DependentUpon>Importieren.vb</DependentUpon>
     </Compile>
-    <Compile Include="Einlesen.vb">
+    <Compile Include="Importieren.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Einstellungen.Designer.vb">
@@ -165,6 +165,12 @@
     </Compile>
     <Compile Include="Notenblatt.vb" />
     <Compile Include="Notensatz.vb" />
+    <Compile Include="Notensätze.Designer.vb">
+      <DependentUpon>Notensätze.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Notensätze.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Settings.vb" />
     <Compile Include="Sortieren.vb">
       <SubType>Form</SubType>
@@ -194,40 +200,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Notenarchiv.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Notenarchiv.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Notenarchiv.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Notenarchiv.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Notenarchiv.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Notenarchiv.tt</DependentUpon>
-    </Compile>
     <Compile Include="RemoveEmptyPages.vb" />
     <Compile Include="SQLInterface.vb" />
     <Compile Include="Stimme.vb" />
-    <Compile Include="tbl_Notensatz.vb">
-      <DependentUpon>Notenarchiv.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbl_Stimme.vb">
-      <DependentUpon>Notenarchiv.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Detail.resx">
       <DependentUpon>Detail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Einlesen.resx">
-      <DependentUpon>Einlesen.vb</DependentUpon>
+    <EmbeddedResource Include="Importieren.resx">
+      <DependentUpon>Importieren.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Einstellungen.resx">
       <DependentUpon>Einstellungen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notensätze.resx">
+      <DependentUpon>Notensätze.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sortieren.resx">
       <DependentUpon>Sortieren.vb</DependentUpon>
@@ -254,13 +242,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <EntityDeploy Include="Notenarchiv.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Notenarchiv.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Notenarchiv.edmx.diagram">
-      <DependentUpon>Notenarchiv.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -270,17 +251,16 @@
     <None Include="icons\barcode.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bass-clef32.png" />
+    <None Include="Resources\bass-clef64.png" />
+    <None Include="Resources\numbered-list64.png" />
+    <None Include="Resources\import32.png" />
+    <None Include="Resources\import64.png" />
+    <None Include="Resources\barcode32.png" />
+    <None Include="Resources\barcode64.png" />
+    <None Include="Resources\sheet-music32.png" />
+    <None Include="Resources\sheet-music.png" />
     <None Include="icons\Binoculars_icon-icons.com_55960.png" />
-    <Content Include="Notenarchiv.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Notenarchiv.edmx</DependentUpon>
-      <LastGenOutput>Notenarchiv.Context.vb</LastGenOutput>
-    </Content>
-    <Content Include="Notenarchiv.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Notenarchiv.edmx</DependentUpon>
-      <LastGenOutput>Notenarchiv.vb</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
