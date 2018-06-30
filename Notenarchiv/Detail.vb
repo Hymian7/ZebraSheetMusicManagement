@@ -79,7 +79,7 @@ WHERE (((tbl_Notensatz.id_NotensatzNr) Like '{0}'));", CurrentNotensatz.Notensat
         Try
             Process.Start(My.Settings.ArchivePath & "\" & CurrentNotensatz.NotensatzNr & "\" & DataGridView1.CurrentRow.Cells(3).Value & ".pdf")
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
 

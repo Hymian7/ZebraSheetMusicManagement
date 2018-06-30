@@ -144,6 +144,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataGridViewProgressColumn.vb" />
     <Compile Include="Detail.Designer.vb">
       <DependentUpon>Detail.vb</DependentUpon>
     </Compile>

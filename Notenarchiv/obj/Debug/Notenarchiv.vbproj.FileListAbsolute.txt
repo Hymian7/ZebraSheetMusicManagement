@@ -52,7 +52,6 @@ D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\EntityFramew
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\EntityFramework.SqlServerCompact.xml
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\System.Data.SQLite.xml
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\System.Data.SQLite.dll.config
-D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbprojResolveAssemblyReference.cache
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbproj.GenerateResource.cache
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbproj.CoreCompileInputs.cache
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbproj.CopyComplete
@@ -70,3 +69,4 @@ D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.pdb
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Notensätze.resources
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Importieren.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbprojAssemblyReference.cache

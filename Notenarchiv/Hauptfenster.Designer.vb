@@ -25,6 +25,7 @@ Partial Class Hauptfenster
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Hauptfenster))
         Me.Ribbon1 = New System.Windows.Forms.Ribbon()
+        Me.RibbonOrbMenuItemEinstellungen = New System.Windows.Forms.RibbonOrbMenuItem()
         Me.ribbontab_Start = New System.Windows.Forms.RibbonTab()
         Me.RibbonPanelModus = New System.Windows.Forms.RibbonPanel()
         Me.RibbonButtonNotensätze = New System.Windows.Forms.RibbonButton()
@@ -38,7 +39,6 @@ Partial Class Hauptfenster
         Me.RibbonTabInhaltsverzeichnis = New System.Windows.Forms.RibbonTab()
         Me.RibbonTabStimme = New System.Windows.Forms.RibbonTab()
         Me.RibbonButton1 = New System.Windows.Forms.RibbonButton()
-        Me.RibbonOrbMenuItemEinstellungen = New System.Windows.Forms.RibbonOrbMenuItem()
         Me.SuspendLayout()
         '
         'Ribbon1
@@ -70,6 +70,15 @@ Partial Class Hauptfenster
         Me.Ribbon1.TabsMargin = New System.Windows.Forms.Padding(5, 26, 20, 0)
         Me.Ribbon1.TabSpacing = 4
         Me.Ribbon1.Text = "Ribbon1"
+        '
+        'RibbonOrbMenuItemEinstellungen
+        '
+        Me.RibbonOrbMenuItemEinstellungen.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left
+        Me.RibbonOrbMenuItemEinstellungen.Image = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.Image"), System.Drawing.Image)
+        Me.RibbonOrbMenuItemEinstellungen.LargeImage = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.LargeImage"), System.Drawing.Image)
+        Me.RibbonOrbMenuItemEinstellungen.Name = "RibbonOrbMenuItemEinstellungen"
+        Me.RibbonOrbMenuItemEinstellungen.SmallImage = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.SmallImage"), System.Drawing.Image)
+        Me.RibbonOrbMenuItemEinstellungen.Text = "Einstellungen"
         '
         'ribbontab_Start
         '
@@ -170,17 +179,9 @@ Partial Class Hauptfenster
         Me.RibbonButton1.Name = "RibbonButton1"
         Me.RibbonButton1.SmallImage = CType(resources.GetObject("RibbonButton1.SmallImage"), System.Drawing.Image)
         '
-        'RibbonOrbMenuItemEinstellungen
-        '
-        Me.RibbonOrbMenuItemEinstellungen.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left
-        Me.RibbonOrbMenuItemEinstellungen.Image = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.Image"), System.Drawing.Image)
-        Me.RibbonOrbMenuItemEinstellungen.LargeImage = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.LargeImage"), System.Drawing.Image)
-        Me.RibbonOrbMenuItemEinstellungen.Name = "RibbonOrbMenuItemEinstellungen"
-        Me.RibbonOrbMenuItemEinstellungen.SmallImage = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.SmallImage"), System.Drawing.Image)
-        Me.RibbonOrbMenuItemEinstellungen.Text = "Einstellungen"
-        '
         'Hauptfenster
         '
+        Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1601, 816)

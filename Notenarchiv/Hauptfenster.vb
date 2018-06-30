@@ -16,7 +16,15 @@ Public Class Hauptfenster
         AddHandler RibbonButtonInhaltsverzeichnisse.Click, AddressOf ChangeMode
         AddHandler RibbonButtonStimmen.Click, AddressOf ChangeMode
 
-        ChangeMode(RibbonButtonNotensätze, EventArgs.Empty)
+        'ChangeMode(RibbonButtonNotensätze, EventArgs.Empty)
+
+        'Notensätze.Show()
+        'Barcodes.Show()
+        'Importieren.Show()
+        'Inhaltsverzeichnisse.Show()
+        'Stimmen.Show()
+
+        'Notensätze.Activate()
 
     End Sub
 
@@ -39,10 +47,15 @@ Public Class Hauptfenster
         For Each mdichild In Me.MdiChildren
             If Not sender.text = mdichild.Name Then
                 mdichild.Hide()
+
+                'Lieber mit mdichild.Activate arbeiten, da sonst Backgroundworker beim Import verloren geht!
+                'und eventuell auch die jeweils anderen Ansichten
             End If
         Next
 
         ShowFormByName(sender.text)
+
+                'ActivateForm
 
     End Sub
 
@@ -89,7 +102,14 @@ Public Class Hauptfenster
 
     End Sub
 
+    Private Sub ActivateFormByName(FormName As String)
+
+
+
+    End Sub
+
     Private Sub RibbonOrbMenuItemEinstellungen_Click(sender As Object, e As EventArgs) Handles RibbonOrbMenuItemEinstellungen.Click
         Einstellungen.Show()
     End Sub
+
 End Class
