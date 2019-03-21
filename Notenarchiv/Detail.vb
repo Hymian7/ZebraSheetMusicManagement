@@ -1,6 +1,6 @@
 ﻿Public Class Detail
 
-    Public Property CurrentNotensatz As Notensatz
+    Public CurrentNotensatz As Notensatz
     Public Event NotensatzAktualisiert(ns As Notensatz, e As EventArgs)
 
     Public Sub ShowData(curNS As Notensatz)
@@ -10,7 +10,6 @@
         Me.Show()
         CurrentNotensatz = curNS
         UpdateInformation()
-        GetStimmen()
 
     End Sub
 
@@ -35,53 +34,25 @@
 
     End Sub
 
-    Private Sub GetStimmen()
-
-        'Stimmen aus Datenbank zu aktuellem Notensatz auslesen
-
-        Try
-
-            Dim dt As New DataTable()
-
-            dt = GetSQL(String.Format("SELECT tbl_Notensatz.id_NotensatzNr, tbl_Notensatz.dt_NotensatzName, tbl_Stimme.dt_StimmeName, tbl_Notenblatt.fk_StimmeNr
-FROM tbl_Stimme INNER JOIN (tbl_Notensatz INNER JOIN tbl_Notenblatt ON tbl_Notensatz.id_NotensatzNr = tbl_Notenblatt.fk_NotensatzNr) ON tbl_Stimme.id_StimmeNr = tbl_Notenblatt.fk_StimmeNr
-WHERE (((tbl_Notensatz.id_NotensatzNr) Like '{0}'));", CurrentNotensatz.NotensatzNr))
-
-            DataGridView1.DataSource = dt
-
-            Dim dtr As New DataTableReader(dt)
-
-            'Stimmen in Listbox auflisten
-            Do While dtr.Read
-                lbStimmen.Items.Add(dtr.GetValue(dtr.GetOrdinal("dt_StimmeName")))
-
-            Loop
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-    End Sub
 
     Sub UpdateInformation()
 
-        CurrentNotensatz.FillInformationByNotensatzNr()
         tbNotensatzNr.Text = CurrentNotensatz.NotensatzNr
         tbNotensatzName.Text = CurrentNotensatz.NotensatzName
         tbArrangeur.Text = CurrentNotensatz.Arrangeur
 
+        olvNotenblaetter.SetObjects(CurrentNotensatz.Notenblaetter)
 
     End Sub
 
-    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
 
-        'MsgBox(My.Settings.ArchivePath & "\" & CurrentNotensatz.NotensatzNr & "\" & DataGridView1.CurrentRow.Cells(3).Value & ".pdf")
+    Private Sub olvNotenblaetter_DoubleClick(sender As Object, e As EventArgs) Handles olvNotenblaetter.DoubleClick
+
+        'MsgBox(My.Settings.ArchivePath & "\" & CurrentNotensatz.NotensatzNr & "\" & olvNotenblaetter.SelectedObject.StimmeNr & ".pdf")
         Try
-            Process.Start(My.Settings.ArchivePath & "\" & CurrentNotensatz.NotensatzNr & "\" & DataGridView1.CurrentRow.Cells(3).Value & ".pdf")
+            Process.Start(My.Settings.ArchivePath & "\" & CurrentNotensatz.NotensatzNr & "\" & olvNotenblaetter.SelectedObject.StimmeNr & ".pdf")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
-
     End Sub
 End Class

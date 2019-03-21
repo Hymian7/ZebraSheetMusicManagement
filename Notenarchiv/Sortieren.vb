@@ -37,9 +37,10 @@ Public Class Sortierer
         Dim curBarcode As FoundBarcode
         Dim nextBarcode As FoundBarcode = New FoundBarcode
 
-        Dim extractor As New InfoExtractor
-        extractor.RegistrationName = "lukasmoeller1998+bytescoutnotforresale@gmail.com"
-        extractor.RegistrationKey = "A4A8-9017-E1E7-CBF4-7E56-EF8E-E14"
+        Dim extractor As New InfoExtractor With {
+            .RegistrationName = "lukasmoeller1998+bytescoutnotforresale@gmail.com",
+            .RegistrationKey = "A4A8-9017-E1E7-CBF4-7E56-EF8E-E14"
+        }
 
         If cbSplitDINA3.Checked Then DinA3Splitter.Split(OpenFileDialog1.FileName)
         If cbRemoveEmptyPages.Checked Then RemoveEmptyPages.Remove(OpenFileDialog1.FileName)
@@ -94,14 +95,14 @@ Public Class Sortierer
     End Sub
 
     Function BarcodesErkennen(ByVal file As String) As FoundBarcode()
+        Dim barcodeReader As New Reader With {
+            .RegistrationName = "lukasmoeller1998+bytescoutnotforresale@gmail.com",
+            .RegistrationKey = "FEC8-CA77-BB86-4DC4-2436-B5EB-474"
+        }
 
-        Dim barcodeReader As New Reader()
-        barcodeReader.RegistrationName = "lukasmoeller1998+bytescoutnotforresale@gmail.com"
-        barcodeReader.RegistrationKey = "FEC8-CA77-BB86-4DC4-2436-B5EB-474"
-
-        ' Limit search to 1-dimensional barcodes only (exclude 2D barcodes to speed up the processing).
-        ' Change to barcodeReader.BarcodeTypesToFind.SetAll() to scan for all supported 1D and 2D barcode types
-        ' or select specific type, e.g. barcodeReader.BarcodeTypesToFind.PDF417 = True
+            ' Limit search to 1-dimensional barcodes only (exclude 2D barcodes to speed up the processing).
+            ' Change to barcodeReader.BarcodeTypesToFind.SetAll() to scan for all supported 1D and 2D barcode types
+            ' or select specific type, e.g. barcodeReader.BarcodeTypesToFind.PDF417 = True
         barcodeReader.BarcodeTypesToFind.Reset()
         barcodeReader.BarcodeTypesToFind.Code128 = True
         barcodeReader.MinimalDataLength = 9

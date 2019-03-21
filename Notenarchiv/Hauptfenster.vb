@@ -112,4 +112,7 @@ Public Class Hauptfenster
         Einstellungen.Show()
     End Sub
 
+    Private Sub RibbonButtonAddNotensatz_Click(sender As Object, e As EventArgs) Handles RibbonButtonAddNotensatz.Click
+        NotensatzHinzufuegen.Show()
+    End Sub
 End Class

@@ -39,12 +39,15 @@ Partial Class Hauptfenster
         Me.RibbonTabInhaltsverzeichnis = New System.Windows.Forms.RibbonTab()
         Me.RibbonTabStimme = New System.Windows.Forms.RibbonTab()
         Me.RibbonButton1 = New System.Windows.Forms.RibbonButton()
+        Me.RibbonPanelNotensatz = New System.Windows.Forms.RibbonPanel()
+        Me.RibbonButtonAddNotensatz = New System.Windows.Forms.RibbonButton()
         Me.SuspendLayout()
         '
         'Ribbon1
         '
         Me.Ribbon1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Ribbon1.Location = New System.Drawing.Point(0, 0)
+        Me.Ribbon1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Ribbon1.Minimized = False
         Me.Ribbon1.Name = "Ribbon1"
         '
@@ -59,7 +62,7 @@ Partial Class Hauptfenster
         Me.Ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013
         Me.Ribbon1.OrbText = "Zebra"
         Me.Ribbon1.RibbonTabFont = New System.Drawing.Font("Trebuchet MS", 9.0!)
-        Me.Ribbon1.Size = New System.Drawing.Size(1601, 161)
+        Me.Ribbon1.Size = New System.Drawing.Size(1924, 198)
         Me.Ribbon1.TabIndex = 0
         Me.Ribbon1.Tabs.Add(Me.ribbontab_Start)
         Me.Ribbon1.Tabs.Add(Me.RibbonTabNotensatz)
@@ -150,6 +153,7 @@ Partial Class Hauptfenster
         'RibbonTabNotensatz
         '
         Me.RibbonTabNotensatz.Name = "RibbonTabNotensatz"
+        Me.RibbonTabNotensatz.Panels.Add(Me.RibbonPanelNotensatz)
         Me.RibbonTabNotensatz.Text = "Notensatz"
         '
         'RibbonTabBarcode
@@ -179,15 +183,30 @@ Partial Class Hauptfenster
         Me.RibbonButton1.Name = "RibbonButton1"
         Me.RibbonButton1.SmallImage = CType(resources.GetObject("RibbonButton1.SmallImage"), System.Drawing.Image)
         '
+        'RibbonPanelNotensatz
+        '
+        Me.RibbonPanelNotensatz.Items.Add(Me.RibbonButtonAddNotensatz)
+        Me.RibbonPanelNotensatz.Name = "RibbonPanelNotensatz"
+        Me.RibbonPanelNotensatz.Text = "Notensatz Tools"
+        '
+        'RibbonButtonAddNotensatz
+        '
+        Me.RibbonButtonAddNotensatz.Image = CType(resources.GetObject("RibbonButtonAddNotensatz.Image"), System.Drawing.Image)
+        Me.RibbonButtonAddNotensatz.LargeImage = CType(resources.GetObject("RibbonButtonAddNotensatz.LargeImage"), System.Drawing.Image)
+        Me.RibbonButtonAddNotensatz.Name = "RibbonButtonAddNotensatz"
+        Me.RibbonButtonAddNotensatz.SmallImage = CType(resources.GetObject("RibbonButtonAddNotensatz.SmallImage"), System.Drawing.Image)
+        Me.RibbonButtonAddNotensatz.Text = "Notensatz hinzufügen"
+        '
         'Hauptfenster
         '
         Me.AllowDrop = True
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1601, 816)
+        Me.ClientSize = New System.Drawing.Size(1924, 1004)
         Me.Controls.Add(Me.Ribbon1)
         Me.IsMdiContainer = True
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Hauptfenster"
         Me.Text = "Hauptfenster"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -221,4 +240,6 @@ Partial Class Hauptfenster
     Friend WithEvents RibbonButtonInhaltsverzeichnisse As RibbonButton
     Friend WithEvents RibbonButtonStimmen As RibbonButton
     Friend WithEvents RibbonOrbMenuItemEinstellungen As RibbonOrbMenuItem
+    Friend WithEvents RibbonPanelNotensatz As RibbonPanel
+    Friend WithEvents RibbonButtonAddNotensatz As RibbonButton
 End Class
