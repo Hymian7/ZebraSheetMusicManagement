@@ -48,9 +48,10 @@
 
     Private Sub olvNotenblaetter_DoubleClick(sender As Object, e As EventArgs) Handles olvNotenblaetter.DoubleClick
 
-        'MsgBox(My.Settings.ArchivePath & "\" & CurrentNotensatz.NotensatzNr & "\" & olvNotenblaetter.SelectedObject.StimmeNr & ".pdf")
+
         Try
-            Process.Start(My.Settings.ArchivePath & "\" & CurrentNotensatz.NotensatzNr & "\" & olvNotenblaetter.SelectedObject.StimmeNr & ".pdf")
+            Dim _nb As New Notenblatt(CurrentNotensatz.NotensatzNr, olvNotenblaetter.SelectedObject.StimmeNr)
+            _nb.OpenPDF()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

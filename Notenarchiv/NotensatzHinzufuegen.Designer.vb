@@ -37,18 +37,18 @@ Partial Class NotensatzHinzufuegen
         Me.gbModus = New System.Windows.Forms.GroupBox()
         Me.rbKeineNotenblaetter = New System.Windows.Forms.RadioButton()
         Me.olvVerfuegbareStimmen = New BrightIdeasSoftware.ObjectListView()
-        Me.btnAddStimme = New System.Windows.Forms.Button()
-        Me.btnRemoveStimme = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.OlvColStimmeNr = CType(New BrightIdeasSoftware.OLVColumn(), BrightIdeasSoftware.OLVColumn)
         Me.OlvColStimmeName = CType(New BrightIdeasSoftware.OLVColumn(), BrightIdeasSoftware.OLVColumn)
+        Me.btnAddStimme = New System.Windows.Forms.Button()
+        Me.btnRemoveStimme = New System.Windows.Forms.Button()
+        Me.panStimmenManuell = New System.Windows.Forms.Panel()
         Me.olvAusgewaehlteStimmen = New BrightIdeasSoftware.ObjectListView()
         Me.OlvColumn1 = CType(New BrightIdeasSoftware.OLVColumn(), BrightIdeasSoftware.OLVColumn)
         Me.OlvColumn2 = CType(New BrightIdeasSoftware.OLVColumn(), BrightIdeasSoftware.OLVColumn)
         Me.Panel2.SuspendLayout()
         Me.gbModus.SuspendLayout()
         CType(Me.olvVerfuegbareStimmen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.panStimmenManuell.SuspendLayout()
         CType(Me.olvAusgewaehlteStimmen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -123,7 +123,6 @@ Partial Class NotensatzHinzufuegen
         '
         'tbNotensatzNr
         '
-        Me.tbNotensatzNr.Enabled = False
         Me.tbNotensatzNr.Location = New System.Drawing.Point(144, 39)
         Me.tbNotensatzNr.Name = "tbNotensatzNr"
         Me.tbNotensatzNr.Size = New System.Drawing.Size(358, 22)
@@ -168,7 +167,7 @@ Partial Class NotensatzHinzufuegen
         Me.gbModus.Controls.Add(Me.rbBarcode)
         Me.gbModus.Controls.Add(Me.rbManuell)
         Me.gbModus.Controls.Add(Me.rbDateiname)
-        Me.gbModus.Location = New System.Drawing.Point(117, 175)
+        Me.gbModus.Location = New System.Drawing.Point(121, 189)
         Me.gbModus.Name = "gbModus"
         Me.gbModus.Size = New System.Drawing.Size(290, 143)
         Me.gbModus.TabIndex = 15
@@ -198,9 +197,20 @@ Partial Class NotensatzHinzufuegen
         Me.olvVerfuegbareStimmen.Name = "olvVerfuegbareStimmen"
         Me.olvVerfuegbareStimmen.ShowGroups = False
         Me.olvVerfuegbareStimmen.Size = New System.Drawing.Size(218, 362)
+        Me.olvVerfuegbareStimmen.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.olvVerfuegbareStimmen.TabIndex = 16
         Me.olvVerfuegbareStimmen.UseCompatibleStateImageBehavior = False
         Me.olvVerfuegbareStimmen.View = System.Windows.Forms.View.Details
+        '
+        'OlvColStimmeNr
+        '
+        Me.OlvColStimmeNr.AspectName = "StimmeNr"
+        Me.OlvColStimmeNr.Text = "Nummer"
+        '
+        'OlvColStimmeName
+        '
+        Me.OlvColStimmeName.AspectName = "StimmeName"
+        Me.OlvColStimmeName.Text = "Name"
         '
         'btnAddStimme
         '
@@ -220,26 +230,16 @@ Partial Class NotensatzHinzufuegen
         Me.btnRemoveStimme.Text = "<<"
         Me.btnRemoveStimme.UseVisualStyleBackColor = True
         '
-        'Panel1
+        'panStimmenManuell
         '
-        Me.Panel1.Controls.Add(Me.olvAusgewaehlteStimmen)
-        Me.Panel1.Controls.Add(Me.olvVerfuegbareStimmen)
-        Me.Panel1.Controls.Add(Me.btnRemoveStimme)
-        Me.Panel1.Controls.Add(Me.btnAddStimme)
-        Me.Panel1.Location = New System.Drawing.Point(532, 39)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(507, 372)
-        Me.Panel1.TabIndex = 20
-        '
-        'OlvColStimmeNr
-        '
-        Me.OlvColStimmeNr.AspectName = "StimmeNr"
-        Me.OlvColStimmeNr.Text = "Nummer"
-        '
-        'OlvColStimmeName
-        '
-        Me.OlvColStimmeName.AspectName = "StimmeName"
-        Me.OlvColStimmeName.Text = "Name"
+        Me.panStimmenManuell.Controls.Add(Me.olvAusgewaehlteStimmen)
+        Me.panStimmenManuell.Controls.Add(Me.olvVerfuegbareStimmen)
+        Me.panStimmenManuell.Controls.Add(Me.btnRemoveStimme)
+        Me.panStimmenManuell.Controls.Add(Me.btnAddStimme)
+        Me.panStimmenManuell.Location = New System.Drawing.Point(532, 39)
+        Me.panStimmenManuell.Name = "panStimmenManuell"
+        Me.panStimmenManuell.Size = New System.Drawing.Size(507, 372)
+        Me.panStimmenManuell.TabIndex = 20
         '
         'olvAusgewaehlteStimmen
         '
@@ -253,6 +253,7 @@ Partial Class NotensatzHinzufuegen
         Me.olvAusgewaehlteStimmen.Name = "olvAusgewaehlteStimmen"
         Me.olvAusgewaehlteStimmen.ShowGroups = False
         Me.olvAusgewaehlteStimmen.Size = New System.Drawing.Size(218, 362)
+        Me.olvAusgewaehlteStimmen.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.olvAusgewaehlteStimmen.TabIndex = 20
         Me.olvAusgewaehlteStimmen.UseCompatibleStateImageBehavior = False
         Me.olvAusgewaehlteStimmen.View = System.Windows.Forms.View.Details
@@ -272,7 +273,7 @@ Partial Class NotensatzHinzufuegen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1055, 541)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panStimmenManuell)
         Me.Controls.Add(Me.gbModus)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -287,7 +288,7 @@ Partial Class NotensatzHinzufuegen
         Me.gbModus.ResumeLayout(False)
         Me.gbModus.PerformLayout()
         CType(Me.olvVerfuegbareStimmen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
+        Me.panStimmenManuell.ResumeLayout(False)
         CType(Me.olvAusgewaehlteStimmen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -311,7 +312,7 @@ Partial Class NotensatzHinzufuegen
     Friend WithEvents olvVerfuegbareStimmen As BrightIdeasSoftware.ObjectListView
     Friend WithEvents btnAddStimme As Button
     Friend WithEvents btnRemoveStimme As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents panStimmenManuell As Panel
     Friend WithEvents OlvColStimmeNr As BrightIdeasSoftware.OLVColumn
     Friend WithEvents OlvColStimmeName As BrightIdeasSoftware.OLVColumn
     Friend WithEvents olvAusgewaehlteStimmen As BrightIdeasSoftware.ObjectListView

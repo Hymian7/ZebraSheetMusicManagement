@@ -15,7 +15,7 @@ Public Class Notensätze
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         AddHandler Detail.NotensatzAktualisiert, AddressOf TabelleAktualisieren
         'AddHandler RibbonButtonAktualisieren.Click, AddressOf TabelleAktualisieren
-        AddHandler Me.Shown, AddressOf TabelleAktualisieren
+        'AddHandler Me.Shown, AddressOf TabelleAktualisieren
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs)
@@ -23,7 +23,7 @@ Public Class Notensätze
 
     End Sub
 
-    Private Sub TabelleAktualisieren()
+    Public Sub TabelleAktualisieren()
 
         'Daten aus tbl_Notensatz werden in die DataListView eingetragen
 

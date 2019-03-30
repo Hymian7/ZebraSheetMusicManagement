@@ -91,7 +91,6 @@ C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\EntityF
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\EntityFramework.SqlServerCompact.xml
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\System.Data.SQLite.xml
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.vbprojAssemblyReference.cache
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Detail.resources
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Importieren.resources
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Einstellungen.resources
@@ -108,3 +107,4 @@ C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenar
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\ObjectListView.dll
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\ObjectListView.xml
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.NotensatzHinzufuegen.resources
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.vbprojAssemblyReference.cache

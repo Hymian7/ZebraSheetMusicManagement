@@ -3,7 +3,7 @@
     Public Property NotensatzNr
     Public Property StimmeNr
     Public Property IstVorhanden
-    Public ReadOnly Property Dateipfad = My.Settings.ArchivePath + "\" + NotensatzNr + "\" + StimmeNr + ".pdf"
+    Public ReadOnly Property Dateipfad
     Public Property StimmeName
     'Public Property NotensatzName = Notensatz.GetNotensatzNameFromNr
     'TODO implementieren
@@ -13,6 +13,7 @@
         StimmeNr = stimme
         IstVorhanden = CheckObVorhanden(My.Settings.ArchivePath + "\" + ns + "\" + stimme + ".pdf")
         StimmeName = Notenarchiv.Stimme.GetStimmeNameFromStimmeNr(stimme)
+        Dateipfad = My.Settings.ArchivePath + "\" + NotensatzNr + "\" + StimmeNr + ".pdf"
 
     End Sub
 
@@ -34,9 +35,22 @@
 
     End Function
 
+    Public Function InDatenbankAnlegen() As Boolean
+
+        Try
+            SQLInterface.SetSQL(String.Format("INSERT INTO tbl_Notenblatt (fk_NotensatzNr, fk_StimmeNr) VALUES ('{0}', '{1}');", NotensatzNr, StimmeNr))
+            'Bei erfolgreich True zurückgeben
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+        'Falls nicht erfolgreich, False zurückgeben
+
+    End Function
+
     Public Sub OpenPDF()
-        'TODO
-        'Process.Start("Dateiname")
+        Process.Start(Dateipfad)
     End Sub
 
 End Class
