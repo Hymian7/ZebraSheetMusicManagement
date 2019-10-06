@@ -29,6 +29,8 @@ Public Class Hauptfenster
         AddHandler RibbonButtonStimmen.Click, AddressOf tabPageStimmen.Select
         AddHandler RibbonButtonInhaltsverzeichnisse.Click, AddressOf tabPageInhaltsverzeichnisse.Select
 
+        AddHandler RibbonButtonNotensaetzeAktualisieren.Click, AddressOf ucNotensätze.TabelleAktualisieren
+
 
         AddHandler tabPageNotensaetze.Enter, AddressOf ucNotensätze.TabelleAktualisieren
 
@@ -42,23 +44,33 @@ Public Class Hauptfenster
         NotensatzHinzufuegen.Show()
     End Sub
 
+#Region "Navigation"
+
     Private Sub RibbonButtonImport_Click(sender As Object, e As EventArgs) Handles RibbonButtonImport.Click
         TabControlFenster.SelectedTab = tabPageImportieren
+        RibbonHauptfenster.ActiveTab = RibbonTabImport
     End Sub
 
     Private Sub RibbonButtonNotensätze_Click(sender As Object, e As EventArgs) Handles RibbonButtonNotensätze.Click
         TabControlFenster.SelectedTab() = tabPageNotensaetze
+        RibbonHauptfenster.ActiveTab = RibbonTabNotensaetze
     End Sub
 
     Private Sub RibbonButtonBarcodes_Click(sender As Object, e As EventArgs) Handles RibbonButtonBarcodes.Click
         TabControlFenster.SelectedTab() = tabPageBarcodes
+        RibbonHauptfenster.ActiveTab = RibbonTabBarcode
     End Sub
 
     Private Sub RibbonButtonInhaltsverzeichnisse_Click(sender As Object, e As EventArgs) Handles RibbonButtonInhaltsverzeichnisse.Click
         TabControlFenster.SelectedTab() = tabPageInhaltsverzeichnisse
+        RibbonHauptfenster.ActiveTab = RibbonTabInhaltsverzeichnis
     End Sub
 
     Private Sub RibbonButtonStimmen_Click(sender As Object, e As EventArgs) Handles RibbonButtonStimmen.Click
         TabControlFenster.SelectedTab() = tabPageStimmen
+        RibbonHauptfenster.ActiveTab = RibbonTabStimme
     End Sub
+
+#End Region
+
 End Class

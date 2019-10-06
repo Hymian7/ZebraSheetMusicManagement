@@ -147,52 +147,65 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataGridViewProgressColumn.vb" />
-    <Compile Include="Detail.Designer.vb">
+    <Compile Include="Forms\DialogVerzeichnisAuswählen.Designer.vb">
+      <DependentUpon>DialogVerzeichnisAuswählen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogVerzeichnisAuswählen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hilfsklassen\DataGridViewProgressColumn.vb" />
+    <Compile Include="Forms\Detail.Designer.vb">
       <DependentUpon>Detail.vb</DependentUpon>
     </Compile>
-    <Compile Include="Detail.vb">
+    <Compile Include="Forms\Detail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DinA3Splitter.vb" />
-    <Compile Include="NotensatzHinzufuegen.Designer.vb">
+    <Compile Include="Hilfsklassen\PDFs\DinA3Splitter.vb" />
+    <Compile Include="UserControls\Inhaltsverzeichnisse.Designer.vb">
+      <DependentUpon>Inhaltsverzeichnisse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Inhaltsverzeichnisse.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\NotensatzHinzufuegen.Designer.vb">
       <DependentUpon>NotensatzHinzufuegen.vb</DependentUpon>
     </Compile>
-    <Compile Include="NotensatzHinzufuegen.vb">
+    <Compile Include="Forms\NotensatzHinzufuegen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Importieren.Designer.vb">
+    <Compile Include="UserControls\Importieren.Designer.vb">
       <DependentUpon>Importieren.vb</DependentUpon>
     </Compile>
-    <Compile Include="Importieren.vb">
-      <SubType>Form</SubType>
+    <Compile Include="UserControls\Importieren.vb">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Einstellungen.Designer.vb">
+    <Compile Include="Forms\Einstellungen.Designer.vb">
       <DependentUpon>Einstellungen.vb</DependentUpon>
     </Compile>
-    <Compile Include="Einstellungen.vb">
+    <Compile Include="Forms\Einstellungen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Notenblatt.vb" />
-    <Compile Include="Notensatz.vb" />
-    <Compile Include="Notensätze.Designer.vb">
+    <Compile Include="Objektklassen\Notenblatt.vb" />
+    <Compile Include="Objektklassen\Notensatz.vb" />
+    <Compile Include="UserControls\Notensätze.Designer.vb">
       <DependentUpon>Notensätze.vb</DependentUpon>
     </Compile>
-    <Compile Include="Notensätze.vb">
-      <SubType>Form</SubType>
+    <Compile Include="UserControls\Notensätze.vb">
+      <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Objektklassen\Programmpunkt.vb" />
     <Compile Include="Settings.vb" />
-    <Compile Include="Sortieren.vb">
+    <Compile Include="Forms\Sortieren.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sortieren.Designer.vb">
+    <Compile Include="Forms\Sortieren.Designer.vb">
       <DependentUpon>Sortieren.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hauptfenster.Designer.vb">
+    <Compile Include="Forms\Hauptfenster.Designer.vb">
       <DependentUpon>Hauptfenster.vb</DependentUpon>
     </Compile>
-    <Compile Include="Hauptfenster.vb">
+    <Compile Include="Forms\Hauptfenster.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -210,30 +223,37 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RemoveEmptyPages.vb" />
-    <Compile Include="SQLInterface.vb" />
-    <Compile Include="Stimme.vb" />
+    <Compile Include="Hilfsklassen\PDFs\RemoveEmptyPages.vb" />
+    <Compile Include="Hilfsklassen\Datenbank\SQLInterface.vb" />
+    <Compile Include="Objektklassen\Stimme.vb" />
+    <Compile Include="Objektklassen\Verzeichnis.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Detail.resx">
+    <EmbeddedResource Include="Forms\Detail.resx">
       <DependentUpon>Detail.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotensatzHinzufuegen.resx">
+    <EmbeddedResource Include="Forms\DialogVerzeichnisAuswählen.resx">
+      <DependentUpon>DialogVerzeichnisAuswählen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Inhaltsverzeichnisse.resx">
+      <DependentUpon>Inhaltsverzeichnisse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NotensatzHinzufuegen.resx">
       <DependentUpon>NotensatzHinzufuegen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Importieren.resx">
+    <EmbeddedResource Include="UserControls\Importieren.resx">
       <DependentUpon>Importieren.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Einstellungen.resx">
+    <EmbeddedResource Include="Forms\Einstellungen.resx">
       <DependentUpon>Einstellungen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Notensätze.resx">
+    <EmbeddedResource Include="UserControls\Notensätze.resx">
       <DependentUpon>Notensätze.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sortieren.resx">
+    <EmbeddedResource Include="Forms\Sortieren.resx">
       <DependentUpon>Sortieren.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hauptfenster.resx">
+    <EmbeddedResource Include="Forms\Hauptfenster.resx">
       <DependentUpon>Hauptfenster.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -244,7 +264,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

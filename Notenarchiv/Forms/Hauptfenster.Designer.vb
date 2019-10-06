@@ -26,32 +26,36 @@ Partial Class Hauptfenster
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Hauptfenster))
         Me.RibbonHauptfenster = New System.Windows.Forms.Ribbon()
         Me.RibbonOrbMenuItemEinstellungen = New System.Windows.Forms.RibbonOrbMenuItem()
-        Me.ribbontab_Start = New System.Windows.Forms.RibbonTab()
+        Me.RibbonTabStart = New System.Windows.Forms.RibbonTab()
         Me.RibbonPanelModus = New System.Windows.Forms.RibbonPanel()
         Me.RibbonButtonNotensätze = New System.Windows.Forms.RibbonButton()
         Me.RibbonButtonBarcodes = New System.Windows.Forms.RibbonButton()
         Me.RibbonButtonImport = New System.Windows.Forms.RibbonButton()
         Me.RibbonButtonInhaltsverzeichnisse = New System.Windows.Forms.RibbonButton()
         Me.RibbonButtonStimmen = New System.Windows.Forms.RibbonButton()
-        Me.RibbonTabNotensatz = New System.Windows.Forms.RibbonTab()
+        Me.RibbonTabNotensaetze = New System.Windows.Forms.RibbonTab()
         Me.RibbonPanelNotensatz = New System.Windows.Forms.RibbonPanel()
+        Me.RibbonButtonNotensaetzeAktualisieren = New System.Windows.Forms.RibbonButton()
         Me.RibbonButtonAddNotensatz = New System.Windows.Forms.RibbonButton()
+        Me.RibbonButtonNotensatzLoeschen = New System.Windows.Forms.RibbonButton()
         Me.RibbonTabBarcode = New System.Windows.Forms.RibbonTab()
         Me.RibbonTabImport = New System.Windows.Forms.RibbonTab()
         Me.RibbonTabInhaltsverzeichnis = New System.Windows.Forms.RibbonTab()
         Me.RibbonTabStimme = New System.Windows.Forms.RibbonTab()
         Me.TabControlFenster = New System.Windows.Forms.TabControl()
         Me.tabPageNotensaetze = New System.Windows.Forms.TabPage()
+        Me.ucNotensätze = New Notenarchiv.Notensätze()
         Me.tabPageBarcodes = New System.Windows.Forms.TabPage()
         Me.tabPageImportieren = New System.Windows.Forms.TabPage()
+        Me.ucImportieren = New Notenarchiv.Importieren()
         Me.tabPageInhaltsverzeichnisse = New System.Windows.Forms.TabPage()
         Me.tabPageStimmen = New System.Windows.Forms.TabPage()
         Me.tabPageDetail = New System.Windows.Forms.TabPage()
-        Me.ucNotensätze = New Notenarchiv.Notensätze()
-        Me.Importieren1 = New Notenarchiv.Importieren()
+        Me.ucInhaltsverzeichnisse = New Notenarchiv.Inhaltsverzeichnisse()
         Me.TabControlFenster.SuspendLayout()
         Me.tabPageNotensaetze.SuspendLayout()
         Me.tabPageImportieren.SuspendLayout()
+        Me.tabPageInhaltsverzeichnisse.SuspendLayout()
         Me.SuspendLayout()
         '
         'RibbonHauptfenster
@@ -71,12 +75,16 @@ Partial Class Hauptfenster
         Me.RibbonHauptfenster.OrbDropDown.Size = New System.Drawing.Size(527, 116)
         Me.RibbonHauptfenster.OrbDropDown.TabIndex = 0
         Me.RibbonHauptfenster.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013
-        Me.RibbonHauptfenster.OrbText = "Zebra"
+        Me.RibbonHauptfenster.OrbText = "ZEBRA"
+        '
+        '
+        '
+        Me.RibbonHauptfenster.QuickAccessToolbar.Visible = False
         Me.RibbonHauptfenster.RibbonTabFont = New System.Drawing.Font("Trebuchet MS", 9.0!)
         Me.RibbonHauptfenster.Size = New System.Drawing.Size(1588, 200)
         Me.RibbonHauptfenster.TabIndex = 0
-        Me.RibbonHauptfenster.Tabs.Add(Me.ribbontab_Start)
-        Me.RibbonHauptfenster.Tabs.Add(Me.RibbonTabNotensatz)
+        Me.RibbonHauptfenster.Tabs.Add(Me.RibbonTabStart)
+        Me.RibbonHauptfenster.Tabs.Add(Me.RibbonTabNotensaetze)
         Me.RibbonHauptfenster.Tabs.Add(Me.RibbonTabBarcode)
         Me.RibbonHauptfenster.Tabs.Add(Me.RibbonTabImport)
         Me.RibbonHauptfenster.Tabs.Add(Me.RibbonTabInhaltsverzeichnis)
@@ -94,11 +102,11 @@ Partial Class Hauptfenster
         Me.RibbonOrbMenuItemEinstellungen.SmallImage = CType(resources.GetObject("RibbonOrbMenuItemEinstellungen.SmallImage"), System.Drawing.Image)
         Me.RibbonOrbMenuItemEinstellungen.Text = "Einstellungen"
         '
-        'ribbontab_Start
+        'RibbonTabStart
         '
-        Me.ribbontab_Start.Name = "ribbontab_Start"
-        Me.ribbontab_Start.Panels.Add(Me.RibbonPanelModus)
-        Me.ribbontab_Start.Text = "Start"
+        Me.RibbonTabStart.Name = "RibbonTabStart"
+        Me.RibbonTabStart.Panels.Add(Me.RibbonPanelModus)
+        Me.RibbonTabStart.Text = "START"
         '
         'RibbonPanelModus
         '
@@ -164,17 +172,27 @@ Partial Class Hauptfenster
         Me.RibbonButtonStimmen.SmallImage = Global.Notenarchiv.My.Resources.Resources.bass_clef32
         Me.RibbonButtonStimmen.Text = "Stimmen"
         '
-        'RibbonTabNotensatz
+        'RibbonTabNotensaetze
         '
-        Me.RibbonTabNotensatz.Name = "RibbonTabNotensatz"
-        Me.RibbonTabNotensatz.Panels.Add(Me.RibbonPanelNotensatz)
-        Me.RibbonTabNotensatz.Text = "Notensatz"
+        Me.RibbonTabNotensaetze.Name = "RibbonTabNotensaetze"
+        Me.RibbonTabNotensaetze.Panels.Add(Me.RibbonPanelNotensatz)
+        Me.RibbonTabNotensaetze.Text = "NOTENSÄTZE"
         '
         'RibbonPanelNotensatz
         '
+        Me.RibbonPanelNotensatz.Items.Add(Me.RibbonButtonNotensaetzeAktualisieren)
         Me.RibbonPanelNotensatz.Items.Add(Me.RibbonButtonAddNotensatz)
+        Me.RibbonPanelNotensatz.Items.Add(Me.RibbonButtonNotensatzLoeschen)
         Me.RibbonPanelNotensatz.Name = "RibbonPanelNotensatz"
         Me.RibbonPanelNotensatz.Text = "Notensatz Tools"
+        '
+        'RibbonButtonNotensaetzeAktualisieren
+        '
+        Me.RibbonButtonNotensaetzeAktualisieren.Image = CType(resources.GetObject("RibbonButtonNotensaetzeAktualisieren.Image"), System.Drawing.Image)
+        Me.RibbonButtonNotensaetzeAktualisieren.LargeImage = CType(resources.GetObject("RibbonButtonNotensaetzeAktualisieren.LargeImage"), System.Drawing.Image)
+        Me.RibbonButtonNotensaetzeAktualisieren.Name = "RibbonButtonNotensaetzeAktualisieren"
+        Me.RibbonButtonNotensaetzeAktualisieren.SmallImage = CType(resources.GetObject("RibbonButtonNotensaetzeAktualisieren.SmallImage"), System.Drawing.Image)
+        Me.RibbonButtonNotensaetzeAktualisieren.Text = "Aktualisieren"
         '
         'RibbonButtonAddNotensatz
         '
@@ -184,25 +202,33 @@ Partial Class Hauptfenster
         Me.RibbonButtonAddNotensatz.SmallImage = CType(resources.GetObject("RibbonButtonAddNotensatz.SmallImage"), System.Drawing.Image)
         Me.RibbonButtonAddNotensatz.Text = "Notensatz hinzufügen"
         '
+        'RibbonButtonNotensatzLoeschen
+        '
+        Me.RibbonButtonNotensatzLoeschen.Image = CType(resources.GetObject("RibbonButtonNotensatzLoeschen.Image"), System.Drawing.Image)
+        Me.RibbonButtonNotensatzLoeschen.LargeImage = CType(resources.GetObject("RibbonButtonNotensatzLoeschen.LargeImage"), System.Drawing.Image)
+        Me.RibbonButtonNotensatzLoeschen.Name = "RibbonButtonNotensatzLoeschen"
+        Me.RibbonButtonNotensatzLoeschen.SmallImage = CType(resources.GetObject("RibbonButtonNotensatzLoeschen.SmallImage"), System.Drawing.Image)
+        Me.RibbonButtonNotensatzLoeschen.Text = "Notensatz Löschen"
+        '
         'RibbonTabBarcode
         '
         Me.RibbonTabBarcode.Name = "RibbonTabBarcode"
-        Me.RibbonTabBarcode.Text = "Barcode"
+        Me.RibbonTabBarcode.Text = "BARCODE"
         '
         'RibbonTabImport
         '
         Me.RibbonTabImport.Name = "RibbonTabImport"
-        Me.RibbonTabImport.Text = "Import"
+        Me.RibbonTabImport.Text = "IMPORT"
         '
         'RibbonTabInhaltsverzeichnis
         '
         Me.RibbonTabInhaltsverzeichnis.Name = "RibbonTabInhaltsverzeichnis"
-        Me.RibbonTabInhaltsverzeichnis.Text = "Inhaltsverzeichnis"
+        Me.RibbonTabInhaltsverzeichnis.Text = "INHALTSVERZEICHNIS"
         '
         'RibbonTabStimme
         '
         Me.RibbonTabStimme.Name = "RibbonTabStimme"
-        Me.RibbonTabStimme.Text = "Stimme"
+        Me.RibbonTabStimme.Text = "STIMME"
         '
         'TabControlFenster
         '
@@ -227,35 +253,56 @@ Partial Class Hauptfenster
         Me.tabPageNotensaetze.Location = New System.Drawing.Point(4, 25)
         Me.tabPageNotensaetze.Name = "tabPageNotensaetze"
         Me.tabPageNotensaetze.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPageNotensaetze.Size = New System.Drawing.Size(1580, 567)
+        Me.tabPageNotensaetze.Size = New System.Drawing.Size(1580, 565)
         Me.tabPageNotensaetze.TabIndex = 0
         Me.tabPageNotensaetze.Text = "Notensätze"
         Me.tabPageNotensaetze.UseVisualStyleBackColor = True
+        '
+        'ucNotensätze
+        '
+        Me.ucNotensätze.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ucNotensätze.Location = New System.Drawing.Point(4, 7)
+        Me.ucNotensätze.Margin = New System.Windows.Forms.Padding(4)
+        Me.ucNotensätze.Name = "ucNotensätze"
+        Me.ucNotensätze.Size = New System.Drawing.Size(1576, 556)
+        Me.ucNotensätze.TabIndex = 0
         '
         'tabPageBarcodes
         '
         Me.tabPageBarcodes.Location = New System.Drawing.Point(4, 25)
         Me.tabPageBarcodes.Name = "tabPageBarcodes"
-        Me.tabPageBarcodes.Size = New System.Drawing.Size(1580, 567)
+        Me.tabPageBarcodes.Size = New System.Drawing.Size(1580, 565)
         Me.tabPageBarcodes.TabIndex = 2
         Me.tabPageBarcodes.Text = "Barcodes"
         Me.tabPageBarcodes.UseVisualStyleBackColor = True
         '
         'tabPageImportieren
         '
-        Me.tabPageImportieren.Controls.Add(Me.Importieren1)
+        Me.tabPageImportieren.Controls.Add(Me.ucImportieren)
         Me.tabPageImportieren.Location = New System.Drawing.Point(4, 25)
         Me.tabPageImportieren.Name = "tabPageImportieren"
-        Me.tabPageImportieren.Size = New System.Drawing.Size(1580, 567)
+        Me.tabPageImportieren.Size = New System.Drawing.Size(1580, 565)
         Me.tabPageImportieren.TabIndex = 3
         Me.tabPageImportieren.Text = "Importieren"
         Me.tabPageImportieren.UseVisualStyleBackColor = True
         '
+        'ucImportieren
+        '
+        Me.ucImportieren.Location = New System.Drawing.Point(4, 4)
+        Me.ucImportieren.Margin = New System.Windows.Forms.Padding(4)
+        Me.ucImportieren.MinimumSize = New System.Drawing.Size(1100, 685)
+        Me.ucImportieren.Name = "ucImportieren"
+        Me.ucImportieren.Size = New System.Drawing.Size(1572, 685)
+        Me.ucImportieren.TabIndex = 0
+        '
         'tabPageInhaltsverzeichnisse
         '
+        Me.tabPageInhaltsverzeichnisse.Controls.Add(Me.ucInhaltsverzeichnisse)
         Me.tabPageInhaltsverzeichnisse.Location = New System.Drawing.Point(4, 25)
         Me.tabPageInhaltsverzeichnisse.Name = "tabPageInhaltsverzeichnisse"
-        Me.tabPageInhaltsverzeichnisse.Size = New System.Drawing.Size(1580, 567)
+        Me.tabPageInhaltsverzeichnisse.Size = New System.Drawing.Size(1580, 565)
         Me.tabPageInhaltsverzeichnisse.TabIndex = 4
         Me.tabPageInhaltsverzeichnisse.Text = "Inhaltsverzeichnisse"
         Me.tabPageInhaltsverzeichnisse.UseVisualStyleBackColor = True
@@ -265,7 +312,7 @@ Partial Class Hauptfenster
         Me.tabPageStimmen.Location = New System.Drawing.Point(4, 25)
         Me.tabPageStimmen.Name = "tabPageStimmen"
         Me.tabPageStimmen.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPageStimmen.Size = New System.Drawing.Size(1580, 567)
+        Me.tabPageStimmen.Size = New System.Drawing.Size(1580, 565)
         Me.tabPageStimmen.TabIndex = 1
         Me.tabPageStimmen.Text = "Stimmen"
         Me.tabPageStimmen.UseVisualStyleBackColor = True
@@ -279,25 +326,13 @@ Partial Class Hauptfenster
         Me.tabPageDetail.Text = "Detail"
         Me.tabPageDetail.UseVisualStyleBackColor = True
         '
-        'ucNotensätze
+        'ucInhaltsverzeichnisse
         '
-        Me.ucNotensätze.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ucNotensätze.Location = New System.Drawing.Point(4, 7)
-        Me.ucNotensätze.Margin = New System.Windows.Forms.Padding(4)
-        Me.ucNotensätze.Name = "ucNotensätze"
-        Me.ucNotensätze.Size = New System.Drawing.Size(1576, 556)
-        Me.ucNotensätze.TabIndex = 0
-        '
-        'Importieren1
-        '
-        Me.Importieren1.Location = New System.Drawing.Point(4, 4)
-        Me.Importieren1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Importieren1.MinimumSize = New System.Drawing.Size(1100, 685)
-        Me.Importieren1.Name = "Importieren1"
-        Me.Importieren1.Size = New System.Drawing.Size(1572, 685)
-        Me.Importieren1.TabIndex = 0
+        Me.ucInhaltsverzeichnisse.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ucInhaltsverzeichnisse.Location = New System.Drawing.Point(0, 0)
+        Me.ucInhaltsverzeichnisse.Name = "ucInhaltsverzeichnisse"
+        Me.ucInhaltsverzeichnisse.Size = New System.Drawing.Size(1580, 565)
+        Me.ucInhaltsverzeichnisse.TabIndex = 0
         '
         'Hauptfenster
         '
@@ -315,12 +350,13 @@ Partial Class Hauptfenster
         Me.TabControlFenster.ResumeLayout(False)
         Me.tabPageNotensaetze.ResumeLayout(False)
         Me.tabPageImportieren.ResumeLayout(False)
+        Me.tabPageInhaltsverzeichnisse.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents RibbonHauptfenster As Ribbon
-    Friend WithEvents ribbontab_Start As RibbonTab
+    Friend WithEvents RibbonTabStart As RibbonTab
     Friend WithEvents RibbonPanelModus As RibbonPanel
     Friend WithEvents RibbonOrbMenuItem1 As RibbonOrbMenuItem
     Friend WithEvents RibbonOrbMenuItem2 As RibbonOrbMenuItem
@@ -333,7 +369,7 @@ Partial Class Hauptfenster
     Friend WithEvents RibbonContext3 As RibbonContext
     Friend WithEvents RibbonContext4 As RibbonContext
     Friend WithEvents RibbonPanel1 As RibbonPanel
-    Friend WithEvents RibbonTabNotensatz As RibbonTab
+    Friend WithEvents RibbonTabNotensaetze As RibbonTab
     Friend WithEvents RibbonTabBarcode As RibbonTab
     Friend WithEvents RibbonTabImport As RibbonTab
     Friend WithEvents RibbonTabInhaltsverzeichnis As RibbonTab
@@ -354,5 +390,8 @@ Partial Class Hauptfenster
     Friend WithEvents tabPageInhaltsverzeichnisse As TabPage
     Friend WithEvents tabPageDetail As TabPage
     Friend WithEvents ucNotensätze As Notensätze
-    Friend WithEvents Importieren1 As Importieren
+    Friend WithEvents ucImportieren As Importieren
+    Friend WithEvents RibbonButtonNotensaetzeAktualisieren As RibbonButton
+    Friend WithEvents RibbonButtonNotensatzLoeschen As RibbonButton
+    Friend WithEvents ucInhaltsverzeichnisse As Inhaltsverzeichnisse
 End Class

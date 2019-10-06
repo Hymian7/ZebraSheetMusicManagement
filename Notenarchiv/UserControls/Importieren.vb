@@ -152,6 +152,8 @@ Public Class Importieren
 
             End Using
 
+            Notensatz.AusBarcodesAnlegen(barcodes)
+            Notenblatt.AusBarcodesAnlegen(barcodes)
             Return True
 
         Catch ex As Exception
@@ -183,7 +185,6 @@ Public Class Importieren
         barcodeReader.MaxNumberOfBarcodesPerPage = 1
 
         barcodes = barcodeReader.ReadFrom(file)
-
         barcodeReader.Dispose()
 
         Return barcodes
@@ -294,10 +295,6 @@ Public Class Importieren
         newrow.Cells(1).Value = False
         newrow.Cells(2).Value = False
         DataGridViewDateien.Rows.Add(newrow)
-
-    End Sub
-
-    Private Sub btnBrowse_Click_1(sender As Object, e As EventArgs) Handles btnBrowse.Click
 
     End Sub
 End Class
