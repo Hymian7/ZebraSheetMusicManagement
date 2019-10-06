@@ -108,3 +108,5 @@ C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\ObjectL
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\ObjectListView.xml
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.NotensatzHinzufuegen.resources
 C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.vbprojAssemblyReference.cache
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.NotensatzHinzufuegen.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\ObjectListView.dll

@@ -97,7 +97,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ObjectListView">
-      <HintPath>D:\Desktop\ObjectListView-2.9.1\ObjectListView\ObjectListView\bin\Debug\ObjectListView.dll</HintPath>
+      <HintPath>..\..\..\..\Dropbox\Zebra SheetMusicManagement\ObjectListView.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -165,7 +165,7 @@
       <DependentUpon>Importieren.vb</DependentUpon>
     </Compile>
     <Compile Include="Importieren.vb">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Einstellungen.Designer.vb">
       <DependentUpon>Einstellungen.vb</DependentUpon>
@@ -179,7 +179,7 @@
       <DependentUpon>Notensätze.vb</DependentUpon>
     </Compile>
     <Compile Include="Notensätze.vb">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Settings.vb" />
     <Compile Include="Sortieren.vb">
