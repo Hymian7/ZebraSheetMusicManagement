@@ -15,50 +15,35 @@ Public Class Notensätze
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
         AddHandler Detail.NotensatzAktualisiert, AddressOf TabelleAktualisieren
         'AddHandler RibbonButtonAktualisieren.Click, AddressOf TabelleAktualisieren
-        AddHandler Me.Shown, AddressOf TabelleAktualisieren
+        'AddHandler Me.Shown, AddressOf TabelleAktualisieren
     End Sub
 
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        'Mit diesem Button werden alle Unterordner des im FolderBrowserDialog ausgewählten Pfades mit Standardwerten
-        'für Titel und Arrangeur und dem Ordnernamen als ID in die Datenbank geschrieben
-
-        If fbd.ShowDialog = DialogResult.OK Then
-
-            For Each dir As String In Directory.GetDirectories(fbd.SelectedPath)
-
-                'Jeden gefundenen Ordner in dem Arbeitsordner als Notensatz anlegen
-                Dim ns As New Notensatz(Strings.Right(dir, My.Settings.NotensatzNrLength))
-                ns.InDatenbankAnlegen()
-
-            Next
-
-        End If
-
-    End Sub
-
-    Private Sub DataGridView1_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseDoubleClick
-        'MsgBox(DataGridView1.CurrentCell.Value)
-
-        'Detail.ShowData(DataGridView1.CurrentCell.Value)
-        Detail.ShowData(New Notensatz(DataGridView1.CurrentRow.Cells(0).Value))
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs)
 
 
     End Sub
 
-    Private Sub TabelleAktualisieren()
+    Public Sub TabelleAktualisieren()
 
-        'Daten aus tbl_Notensatz werden in die BindingSource gelesen und in der DataGridView angezeigt
+        'Daten aus tbl_Notensatz werden in die DataListView eingetragen
 
-        bs.DataSource = GetSQL("SELECT * FROM tbl_Notensatz")
-        DataGridView1.DataSource = bs
+        dlvNotensaetze.DataSource = GetSQL("SELECT * FROM tbl_Notensatz")
+        dlvNotensaetze.Columns(0).Text = "NotensatzNr"
+        dlvNotensaetze.Columns(1).Text = "Notensatzname"
+        dlvNotensaetze.Columns(2).Text = "Arrangeur"
+        dlvNotensaetze.AutoResizeColumns()
 
     End Sub
 
     Private Sub tbFilter_TextChanged(sender As Object, e As EventArgs) Handles tbFilter.TextChanged
         'Filter aus tbFilter übernehmen
-        'Filter funktioniert bisher mit Wildcards
+        'TODO: Modelfilter statt Textmatchfilter
 
-        bs.Filter = String.Format("dt_NotensatzName LIKE '*{0}*' OR id_NotensatzNr LIKE '*{0}*' OR dt_ArrangeurName LIKE '*{0}*'", tbFilter.Text)
+        dlvNotensaetze.ModelFilter = New BrightIdeasSoftware.TextMatchFilter(dlvNotensaetze).Contains(dlvNotensaetze, tbFilter.Text)
+
     End Sub
 
+    Private Sub dlvNotensaetze_DoubleClick(sender As Object, e As EventArgs) Handles dlvNotensaetze.DoubleClick
+        Detail.ShowData(New Notensatz(dlvNotensaetze.SelectedItem.Text))
+    End Sub
 End Class

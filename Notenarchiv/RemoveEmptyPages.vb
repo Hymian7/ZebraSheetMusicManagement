@@ -18,17 +18,18 @@ Module RemoveEmptyPages
         Dim tempFolder = ".\temp"
 
         ' Create and setup Bytescout.PDFExtractor.TextExtractor instance
-        Dim extractor As New TextExtractor("lukasmoeller1998+bytescoutnotforresale@gmail.com", "A4A8-9017-E1E7-CBF4-7E56-EF8E-E14")
         ' Enable Optical Character Recognition (OCR)
-        extractor.OCRMode = OCRMode.TextFromImagesOnly
         ' Set the location of "tessdata" folder containing language data files
-        extractor.OCRLanguageDataFolder = "c:\Program Files\Bytescout PDF Extractor SDK\Redistributable\net4.00\tessdata"
         ' Set OCR language
-        extractor.OCRLanguage = "deu"
         ' Set PDF document rendering resolution
-        extractor.OCRResolution = 300
+        Dim extractor As New TextExtractor("lukasmoeller1998+bytescoutnotforresale@gmail.com", "A4A8-9017-E1E7-CBF4-7E56-EF8E-E14") With {
+            .OCRMode = OCRMode.TextFromImagesOnly,
+            .OCRLanguageDataFolder = "c:\Program Files\Bytescout PDF Extractor SDK\Redistributable\net4.00\tessdata",
+            .OCRLanguage = "deu",
+            .OCRResolution = 300
+        }
 
-        ' Load PDF document
+            ' Load PDF document
         MsgBox(inputFile)
         extractor.LoadDocumentFromFile(inputFile)
 
@@ -54,10 +55,11 @@ Module RemoveEmptyPages
         Dim ranges As String = String.Join(",", nonEmptyPages)
 
         ' Create Bytescout.PDFExtractor.DocumentSplitter instance
-        Dim splitter = New DocumentSplitter("lukasmoeller1998+bytescoutnotforresale@gmail.com", "A4A8-9017-E1E7-CBF4-7E56-EF8E-E14")
-        splitter.OptimizeSplittedDocuments = True
+        Dim splitter = New DocumentSplitter("lukasmoeller1998+bytescoutnotforresale@gmail.com", "A4A8-9017-E1E7-CBF4-7E56-EF8E-E14") With {
+            .OptimizeSplittedDocuments = True
+        }
 
-        ' Split document by non-empty in temp folder
+            ' Split document by non-empty in temp folder
         Dim parts = splitter.Split(inputFile, ranges, tempFolder)
 
         ' Cleanup

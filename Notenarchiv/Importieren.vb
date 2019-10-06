@@ -42,7 +42,7 @@ Public Class Importieren
 
         For Each dir As String In System.IO.Directory.GetDirectories(FolderBrowserDialog1.SelectedPath)
 
-            Dim ns As New Notensatz(Notensatz.GetNotensatzNrFromDateiname(dir))
+            Dim ns As New Notensatz(Notensatz.GetNotensatzNrFromDateipfad(dir))
             ns.InDatenbankAnlegen()
 
         Next
@@ -50,10 +50,10 @@ Public Class Importieren
     End Sub
 
     Private Sub ButtonHinzufügen_Click(sender As Object, e As EventArgs) Handles ButtonHinzufügen.Click
-
-        Dim ofd As New OpenFileDialog
-        ofd.Multiselect = True
-        ofd.Filter = "PDF-Dokumente (*.pdf)|*.pdf"
+        Dim ofd As New OpenFileDialog With {
+            .Multiselect = True,
+            .Filter = "PDF-Dokumente (*.pdf)|*.pdf"
+        }
 
         If ofd.ShowDialog = DialogResult.OK Then
 
@@ -69,7 +69,12 @@ Public Class Importieren
     End Sub
 
     Private Sub DataGridViewDateien_DoubleClick(sender As Object, e As EventArgs) Handles DataGridViewDateien.DoubleClick
-        Process.Start(DataGridViewDateien.CurrentRow.Cells(0).Value)
+        Try
+            Process.Start(DataGridViewDateien.CurrentRow.Cells(0).Value)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub ButtonEntfernen_Click(sender As Object, e As EventArgs) Handles ButtonEntfernen.Click
@@ -92,9 +97,10 @@ Public Class Importieren
             Dim removeEP As Boolean = datei.Cells(1).Value
             Dim splitA3 As Boolean = datei.Cells(2).Value
 
-            Dim extractor As New InfoExtractor
-            extractor.RegistrationName = "lukasmoeller1998+bytescoutnotforresale@gmail.com"
-            extractor.RegistrationKey = "A4A8-9017-E1E7-CBF4-7E56-EF8E-E14"
+            Dim extractor As New InfoExtractor With {
+                .RegistrationName = "lukasmoeller1998+bytescoutnotforresale@gmail.com",
+                .RegistrationKey = "A4A8-9017-E1E7-CBF4-7E56-EF8E-E14"
+            }
 
             If splitA3 Then DinA3Splitter.Split(dateiname)
             If removeEP Then RemoveEmptyPages.Remove(dateiname)
@@ -158,10 +164,10 @@ Public Class Importieren
     End Function
 
     Function BarcodesErkennen(ByVal file As String) As FoundBarcode()
-
-        Dim barcodeReader As New Reader()
-        barcodeReader.RegistrationName = "lukasmoeller1998+bytescoutnotforresale@gmail.com"
-        barcodeReader.RegistrationKey = "FEC8-CA77-BB86-4DC4-2436-B5EB-474"
+        Dim barcodeReader As New Reader With {
+            .RegistrationName = "lukasmoeller1998+bytescoutnotforresale@gmail.com",
+            .RegistrationKey = "FEC8-CA77-BB86-4DC4-2436-B5EB-474"
+        }
 
         ' Limit search to 1-dimensional barcodes only (exclude 2D barcodes to speed up the processing).
         ' Change to barcodeReader.BarcodeTypesToFind.SetAll() to scan for all supported 1D and 2D barcode types
@@ -288,6 +294,10 @@ Public Class Importieren
         newrow.Cells(1).Value = False
         newrow.Cells(2).Value = False
         DataGridViewDateien.Rows.Add(newrow)
+
+    End Sub
+
+    Private Sub btnBrowse_Click_1(sender As Object, e As EventArgs) Handles btnBrowse.Click
 
     End Sub
 End Class

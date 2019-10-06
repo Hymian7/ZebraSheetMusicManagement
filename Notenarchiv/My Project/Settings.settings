@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ArchivePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\archive</Value>
     </Setting>
     <Setting Name="DBPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\database\db.accdb</Value>
+      <Value Profile="(Default)">C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\database</Value>
     </Setting>
     <Setting Name="NotensatzNrLength" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">6</Value>

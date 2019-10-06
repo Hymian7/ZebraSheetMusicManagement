@@ -70,3 +70,41 @@ D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Notensätze.resources
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Importieren.resources
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.vbprojAssemblyReference.cache
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\Notenarchiv.exe.config
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\Notenarchiv.exe
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\Notenarchiv.pdb
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\Notenarchiv.xml
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\Bytescout.BarCodeReader.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\Bytescout.PDF.Converters.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\Bytescout.PDF.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\Bytescout.PDFExtractor.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\Bytescout.PDFExtractor.OCRExtension.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\EntityFramework.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\System.Data.SQLite.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\EntityFramework.xml
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\System.Data.SQLite.xml
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Detail.resources
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Importieren.resources
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Einstellungen.resources
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Notensätze.resources
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Sortierer.resources
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Hauptfenster.resources
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.Resources.resources
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.vbproj.GenerateResource.cache
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.vbproj.CoreCompileInputs.cache
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.vbproj.CopyComplete
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.exe
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.xml
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.pdb
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\ObjectListView.dll
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\ObjectListView.xml
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.NotensatzHinzufuegen.resources
+C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.vbprojAssemblyReference.cache

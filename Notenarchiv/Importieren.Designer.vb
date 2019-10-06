@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Importieren
-    Inherits System.Windows.Forms.Form
+    Inherits System.Windows.Forms.UserControl
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Importieren
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPageScans = New System.Windows.Forms.TabPage()
@@ -42,6 +42,7 @@ Partial Class Importieren
         Me.lbStimmen = New System.Windows.Forms.ListBox()
         Me.lbNotensatz = New System.Windows.Forms.ListBox()
         Me.TabPageManuell = New System.Windows.Forms.TabPage()
+        Me.btnAdd = New System.Windows.Forms.Button()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.DataGridViewProgressColumn1 = New Notenarchiv.DataGridViewProgressColumn()
@@ -49,17 +50,22 @@ Partial Class Importieren
         Me.TabPageScans.SuspendLayout()
         CType(Me.DataGridViewDateien, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPageAnderesArchiv.SuspendLayout()
+        Me.TabPageManuell.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
         '
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPageScans)
         Me.TabControl1.Controls.Add(Me.TabPageAnderesArchiv)
         Me.TabControl1.Controls.Add(Me.TabPageManuell)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Location = New System.Drawing.Point(16, 15)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1561, 671)
+        Me.TabControl1.Size = New System.Drawing.Size(1059, 610)
         Me.TabControl1.TabIndex = 5
         '
         'TabPageScans
@@ -71,46 +77,57 @@ Partial Class Importieren
         Me.TabPageScans.Controls.Add(Me.DataGridViewDateien)
         Me.TabPageScans.Controls.Add(Me.ButtonEntfernen)
         Me.TabPageScans.Controls.Add(Me.ButtonHinzufügen)
-        Me.TabPageScans.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageScans.Location = New System.Drawing.Point(4, 25)
+        Me.TabPageScans.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPageScans.Name = "TabPageScans"
-        Me.TabPageScans.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageScans.Size = New System.Drawing.Size(1553, 645)
+        Me.TabPageScans.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPageScans.Size = New System.Drawing.Size(1051, 581)
         Me.TabPageScans.TabIndex = 0
         Me.TabPageScans.Text = "Scans verarbeiten"
         Me.TabPageScans.UseVisualStyleBackColor = True
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(26, 560)
+        Me.ProgressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ProgressBar1.Location = New System.Drawing.Point(35, 529)
+        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(4)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(730, 23)
+        Me.ProgressBar1.Size = New System.Drawing.Size(711, 28)
         Me.ProgressBar1.TabIndex = 10
         '
         'ButtonStart
         '
-        Me.ButtonStart.Location = New System.Drawing.Point(707, 404)
+        Me.ButtonStart.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonStart.Location = New System.Drawing.Point(943, 529)
+        Me.ButtonStart.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonStart.Name = "ButtonStart"
-        Me.ButtonStart.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonStart.Size = New System.Drawing.Size(100, 28)
         Me.ButtonStart.TabIndex = 9
         Me.ButtonStart.Text = "Start"
         Me.ButtonStart.UseVisualStyleBackColor = True
         '
         'btn_scan
         '
-        Me.btn_scan.Location = New System.Drawing.Point(707, 337)
+        Me.btn_scan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_scan.Location = New System.Drawing.Point(943, 493)
+        Me.btn_scan.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_scan.Name = "btn_scan"
-        Me.btn_scan.Size = New System.Drawing.Size(75, 23)
+        Me.btn_scan.Size = New System.Drawing.Size(100, 28)
         Me.btn_scan.TabIndex = 8
         Me.btn_scan.Text = "Erkennen"
         Me.btn_scan.UseVisualStyleBackColor = True
         '
         'lb_barcodes
         '
+        Me.lb_barcodes.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lb_barcodes.FormattingEnabled = True
-        Me.lb_barcodes.Location = New System.Drawing.Point(707, 128)
+        Me.lb_barcodes.ItemHeight = 16
+        Me.lb_barcodes.Location = New System.Drawing.Point(754, 133)
+        Me.lb_barcodes.Margin = New System.Windows.Forms.Padding(4)
         Me.lb_barcodes.MultiColumn = True
         Me.lb_barcodes.Name = "lb_barcodes"
-        Me.lb_barcodes.Size = New System.Drawing.Size(375, 173)
+        Me.lb_barcodes.Size = New System.Drawing.Size(289, 292)
         Me.lb_barcodes.TabIndex = 7
         '
         'DataGridViewDateien
@@ -118,11 +135,15 @@ Partial Class Importieren
         Me.DataGridViewDateien.AllowDrop = True
         Me.DataGridViewDateien.AllowUserToAddRows = False
         Me.DataGridViewDateien.AllowUserToDeleteRows = False
+        Me.DataGridViewDateien.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridViewDateien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewDateien.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.columnDateipfad, Me.columnLeereSeiten, Me.columnA3Seiten, Me.Fortschritt})
-        Me.DataGridViewDateien.Location = New System.Drawing.Point(26, 31)
+        Me.DataGridViewDateien.Location = New System.Drawing.Point(35, 38)
+        Me.DataGridViewDateien.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridViewDateien.Name = "DataGridViewDateien"
-        Me.DataGridViewDateien.Size = New System.Drawing.Size(659, 434)
+        Me.DataGridViewDateien.Size = New System.Drawing.Size(711, 483)
         Me.DataGridViewDateien.TabIndex = 3
         '
         'columnDateipfad
@@ -151,18 +172,22 @@ Partial Class Importieren
         '
         'ButtonEntfernen
         '
-        Me.ButtonEntfernen.Location = New System.Drawing.Point(707, 60)
+        Me.ButtonEntfernen.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonEntfernen.Location = New System.Drawing.Point(943, 74)
+        Me.ButtonEntfernen.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonEntfernen.Name = "ButtonEntfernen"
-        Me.ButtonEntfernen.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonEntfernen.Size = New System.Drawing.Size(100, 28)
         Me.ButtonEntfernen.TabIndex = 2
         Me.ButtonEntfernen.Text = "Entfernen"
         Me.ButtonEntfernen.UseVisualStyleBackColor = True
         '
         'ButtonHinzufügen
         '
-        Me.ButtonHinzufügen.Location = New System.Drawing.Point(707, 31)
+        Me.ButtonHinzufügen.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonHinzufügen.Location = New System.Drawing.Point(943, 38)
+        Me.ButtonHinzufügen.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonHinzufügen.Name = "ButtonHinzufügen"
-        Me.ButtonHinzufügen.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonHinzufügen.Size = New System.Drawing.Size(100, 28)
         Me.ButtonHinzufügen.TabIndex = 1
         Me.ButtonHinzufügen.Text = "Hinzufügen"
         Me.ButtonHinzufügen.UseVisualStyleBackColor = True
@@ -174,35 +199,39 @@ Partial Class Importieren
         Me.TabPageAnderesArchiv.Controls.Add(Me.btnBrowse)
         Me.TabPageAnderesArchiv.Controls.Add(Me.lbStimmen)
         Me.TabPageAnderesArchiv.Controls.Add(Me.lbNotensatz)
-        Me.TabPageAnderesArchiv.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageAnderesArchiv.Location = New System.Drawing.Point(4, 25)
+        Me.TabPageAnderesArchiv.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPageAnderesArchiv.Name = "TabPageAnderesArchiv"
-        Me.TabPageAnderesArchiv.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageAnderesArchiv.Size = New System.Drawing.Size(1553, 645)
+        Me.TabPageAnderesArchiv.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPageAnderesArchiv.Size = New System.Drawing.Size(1468, 888)
         Me.TabPageAnderesArchiv.TabIndex = 1
         Me.TabPageAnderesArchiv.Text = "Aus externem Archiv"
         Me.TabPageAnderesArchiv.UseVisualStyleBackColor = True
         '
         'tbPfad
         '
-        Me.tbPfad.Location = New System.Drawing.Point(126, 39)
+        Me.tbPfad.Location = New System.Drawing.Point(168, 48)
+        Me.tbPfad.Margin = New System.Windows.Forms.Padding(4)
         Me.tbPfad.Name = "tbPfad"
-        Me.tbPfad.Size = New System.Drawing.Size(616, 20)
+        Me.tbPfad.Size = New System.Drawing.Size(820, 22)
         Me.tbPfad.TabIndex = 5
         '
         'btnEinlesen
         '
-        Me.btnEinlesen.Location = New System.Drawing.Point(733, 374)
+        Me.btnEinlesen.Location = New System.Drawing.Point(977, 460)
+        Me.btnEinlesen.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEinlesen.Name = "btnEinlesen"
-        Me.btnEinlesen.Size = New System.Drawing.Size(106, 23)
+        Me.btnEinlesen.Size = New System.Drawing.Size(141, 28)
         Me.btnEinlesen.TabIndex = 9
         Me.btnEinlesen.Text = "Einlesen"
         Me.btnEinlesen.UseVisualStyleBackColor = True
         '
         'btnBrowse
         '
-        Me.btnBrowse.Location = New System.Drawing.Point(748, 37)
+        Me.btnBrowse.Location = New System.Drawing.Point(997, 46)
+        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBrowse.Name = "btnBrowse"
-        Me.btnBrowse.Size = New System.Drawing.Size(106, 23)
+        Me.btnBrowse.Size = New System.Drawing.Size(141, 28)
         Me.btnBrowse.TabIndex = 6
         Me.btnBrowse.Text = "Ordner wählen"
         Me.btnBrowse.UseVisualStyleBackColor = True
@@ -210,28 +239,43 @@ Partial Class Importieren
         'lbStimmen
         '
         Me.lbStimmen.FormattingEnabled = True
-        Me.lbStimmen.Location = New System.Drawing.Point(457, 65)
+        Me.lbStimmen.ItemHeight = 16
+        Me.lbStimmen.Location = New System.Drawing.Point(609, 80)
+        Me.lbStimmen.Margin = New System.Windows.Forms.Padding(4)
         Me.lbStimmen.MultiColumn = True
         Me.lbStimmen.Name = "lbStimmen"
-        Me.lbStimmen.Size = New System.Drawing.Size(325, 277)
+        Me.lbStimmen.Size = New System.Drawing.Size(432, 340)
         Me.lbStimmen.TabIndex = 8
         '
         'lbNotensatz
         '
         Me.lbNotensatz.FormattingEnabled = True
-        Me.lbNotensatz.Location = New System.Drawing.Point(126, 65)
+        Me.lbNotensatz.ItemHeight = 16
+        Me.lbNotensatz.Location = New System.Drawing.Point(168, 80)
+        Me.lbNotensatz.Margin = New System.Windows.Forms.Padding(4)
         Me.lbNotensatz.Name = "lbNotensatz"
-        Me.lbNotensatz.Size = New System.Drawing.Size(325, 277)
+        Me.lbNotensatz.Size = New System.Drawing.Size(432, 340)
         Me.lbNotensatz.TabIndex = 7
         '
         'TabPageManuell
         '
-        Me.TabPageManuell.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageManuell.Controls.Add(Me.btnAdd)
+        Me.TabPageManuell.Location = New System.Drawing.Point(4, 25)
+        Me.TabPageManuell.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPageManuell.Name = "TabPageManuell"
-        Me.TabPageManuell.Size = New System.Drawing.Size(1553, 645)
+        Me.TabPageManuell.Size = New System.Drawing.Size(1468, 888)
         Me.TabPageManuell.TabIndex = 2
         Me.TabPageManuell.Text = "Manuell einsortieren"
         Me.TabPageManuell.UseVisualStyleBackColor = True
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(30, 96)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(97, 30)
+        Me.btnAdd.TabIndex = 1
+        Me.btnAdd.Text = "Hinzufügen"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'BackgroundWorker1
         '
@@ -245,10 +289,12 @@ Partial Class Importieren
         '
         'Importieren
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1585, 813)
+        Me.ClientSize = New System.Drawing.Size(1082, 638)
         Me.Controls.Add(Me.TabControl1)
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MinimumSize = New System.Drawing.Size(1100, 685)
         Me.Name = "Importieren"
         Me.Text = "Importieren"
         Me.TabControl1.ResumeLayout(False)
@@ -256,6 +302,7 @@ Partial Class Importieren
         CType(Me.DataGridViewDateien, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPageAnderesArchiv.ResumeLayout(False)
         Me.TabPageAnderesArchiv.PerformLayout()
+        Me.TabPageManuell.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -282,4 +329,5 @@ Partial Class Importieren
     Friend WithEvents columnA3Seiten As DataGridViewCheckBoxColumn
     Friend WithEvents Fortschritt As DataGridViewProgressColumn
     Friend WithEvents DataGridViewProgressColumn1 As DataGridViewProgressColumn
+    Friend WithEvents btnAdd As Button
 End Class
