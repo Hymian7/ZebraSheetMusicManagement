@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ArchivePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\archive</Value>
+      <Value Profile="(Default)">D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\archive</Value>
     </Setting>
     <Setting Name="DBPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\database</Value>
+      <Value Profile="(Default)">D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\database\db.accdb</Value>
     </Setting>
     <Setting Name="NotensatzNrLength" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">6</Value>

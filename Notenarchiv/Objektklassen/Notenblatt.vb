@@ -11,13 +11,13 @@
     Public Sub New(ns, stimme)
         NotensatzNr = ns
         StimmeNr = stimme
-        IstVorhanden = CheckObVorhanden(My.Settings.ArchivePath + "\" + ns + "\" + stimme + ".pdf")
+        IstVorhanden = CheckObDateiVorhanden(My.Settings.ArchivePath + "\" + ns + "\" + stimme + ".pdf")
         StimmeName = Notenarchiv.Stimme.GetStimmeNameFromStimmeNr(stimme)
         Dateipfad = My.Settings.ArchivePath + "\" + NotensatzNr + "\" + StimmeNr + ".pdf"
 
     End Sub
 
-    Private Function CheckObVorhanden(Optional AndererPfad As String = "") As Boolean
+    Private Function CheckObDateiVorhanden(Optional AndererPfad As String = "") As Boolean
 
         If AndererPfad <> "" Then
             If System.IO.File.Exists(AndererPfad) Then
@@ -33,6 +33,20 @@
             End If
         End If
 
+    End Function
+
+    Private Function CheckObInDatenbankVorhanden() As Boolean
+        Dim dt As New DataTable
+        dt = GetSQL(String.Format("SELECT tbl_Notenblatt.fk_NotensatzNr, tbl_Notenblatt.fk_StimmeNr FROM tbl_Notenblatt WHERE (((tbl_Notenblatt.fk_NotensatzNr) Like '{0}') AND ((tbl_Notenblatt.fk_StimmeNr) Like '{1}'));", NotensatzNr, StimmeNr))
+
+        Dim dtr As New DataTableReader(dt)
+        dtr.Read()
+
+
+        If dtr.HasRows Then
+            Return True
+        Else Return False
+        End If
     End Function
 
     Public Function InDatenbankAnlegen() As Boolean
@@ -51,6 +65,21 @@
 
     Public Sub OpenPDF()
         Process.Start(Dateipfad)
+    End Sub
+
+    Public Shared Sub AusBarcodesAnlegen(barcodes As Bytescout.BarCodeReader.FoundBarcode())
+
+        Dim newsheets As List(Of Notenblatt) = New List(Of Notenblatt)
+
+        For Each bc In barcodes
+            If Not newsheets.Contains(New Notenblatt(Left(bc.Value, My.Settings.NotensatzNrLength), Right(bc.Value, My.Settings.StimmeNrLength))) Then
+                newsheets.Add(New Notenblatt(Left(bc.Value, My.Settings.NotensatzNrLength), Right(bc.Value, My.Settings.StimmeNrLength)))
+            End If
+        Next
+
+        For Each newsheet In newsheets
+            If Not newsheet.CheckObInDatenbankVorhanden Then newsheet.InDatenbankAnlegen()
+        Next
     End Sub
 
 End Class

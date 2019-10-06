@@ -4,23 +4,16 @@ Imports Notenarchiv.SQLInterface
 
 Public Class Notensätze
 
-    Private bs As BindingSource = New BindingSource
-    Private fbd As FolderBrowserDialog = New FolderBrowserDialog
-
     Public Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
 
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
-        AddHandler Detail.NotensatzAktualisiert, AddressOf TabelleAktualisieren
+
+        'AddHandler Detail.NotensatzAktualisiert, AddressOf TabelleAktualisieren
         'AddHandler RibbonButtonAktualisieren.Click, AddressOf TabelleAktualisieren
         'AddHandler Me.Shown, AddressOf TabelleAktualisieren
-    End Sub
-
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs)
-
-
     End Sub
 
     Public Sub TabelleAktualisieren()
@@ -44,6 +37,7 @@ Public Class Notensätze
     End Sub
 
     Private Sub dlvNotensaetze_DoubleClick(sender As Object, e As EventArgs) Handles dlvNotensaetze.DoubleClick
-        Detail.ShowData(New Notensatz(dlvNotensaetze.SelectedItem.Text))
+        Dim frmDetail As New Detail(New Notensatz(dlvNotensaetze.SelectedItem.Text))
+        AddHandler frmDetail.CurrentNotensatz.NotensatzAktualisiert, AddressOf TabelleAktualisieren
     End Sub
 End Class

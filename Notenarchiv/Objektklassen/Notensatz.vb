@@ -4,6 +4,12 @@
     Public Property NotensatzName As String
     Public Property Arrangeur As String
 
+    Private Const StandardName As String = "<Neuer Notensatz>"
+    Private Const StandardArrangeur As String = "<Neuer Arrangeur>"
+
+    Public Event NotensatzAktualisiert(sender As Notensatz, e As EventArgs)
+    Public Event NotensatzAngelegt(sender As Notensatz, e As EventArgs)
+
     Public ReadOnly Property Notenblaetter As Notenblatt()
         Get
             'Stimmen aus Datenbank zu Notensatz auslesen und Notenblatt-Array zurückgeben
@@ -33,16 +39,16 @@
         End Get
     End Property
 
-    Public Sub New(id As String, Optional name As String = Nothing, Optional arr As String = Nothing)
+    Public Sub New(id As String, Optional name As String = StandardName, Optional arr As String = StandardArrangeur)
 
         NotensatzNr = id
 
-        If CheckObVorhanden() = False Then
+        If CheckObInDatenbankVorhanden() = False Then
 
             NotensatzName = name
             Arrangeur = arr
 
-        ElseIf CheckObVorhanden() = True Then
+        ElseIf CheckObInDatenbankVorhanden() = True Then
             FillInformationByNotensatzNr()
 
         End If
@@ -54,7 +60,7 @@
 
         Try
             SQLInterface.SetSQL(String.Format("INSERT INTO tbl_Notensatz (id_NotensatzNr, dt_NotensatzName, dt_ArrangeurName) VALUES ('{0}', '{1}', '{2}');", NotensatzNr, NotensatzName, Arrangeur))
-
+            RaiseEvent NotensatzAngelegt(Me, EventArgs.Empty)
             'Bei erfolgreich True zurückgeben
             Return True
         Catch ex As Exception
@@ -70,6 +76,8 @@
         Try
             'Console.WriteLine(String.Format("UPDATE tbl_Notensatz SET tbl_Notensatz.dt_NotensatzName = '{1}', tbl_Notensatz.dt_ArrangeurName = '{2}' WHERE (((tbl_Notensatz.id_NotensatzNr) Like '{0}'));", NotensatzNr, newName, newArrangeur))
             SQLInterface.SetSQL(String.Format("UPDATE tbl_Notensatz SET tbl_Notensatz.dt_NotensatzName = '{1}', tbl_Notensatz.dt_ArrangeurName = '{2}' WHERE (((tbl_Notensatz.id_NotensatzNr) Like '{0}'));", NotensatzNr, newName, newArrangeur))
+
+            RaiseEvent NotensatzAktualisiert(Me, EventArgs.Empty)
 
             Return True
         Catch ex As Exception
@@ -96,7 +104,7 @@
         End Try
     End Function
 
-    Private Function CheckObVorhanden() As Boolean
+    Private Function CheckObInDatenbankVorhanden() As Boolean
         Dim dt As New DataTable
         dt = GetSQL(String.Format("SELECT tbl_Notensatz.id_NotensatzNr FROM tbl_Notensatz WHERE (((tbl_Notensatz.id_NotensatzNr) Like '{0}'));", NotensatzNr))
 
@@ -114,6 +122,34 @@
     Public Shared Function GetNotensatzNrFromDateipfad(ByVal pfad As String) As String
         Return Strings.Right(pfad, My.Settings.NotensatzNrLength)
     End Function
+
+    Public Function Refresh() As Boolean
+        Try
+            If FillInformationByNotensatzNr() Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Shared Sub AusBarcodesAnlegen(barcodes As Bytescout.BarCodeReader.FoundBarcode())
+
+        Dim newids As List(Of String) = New List(Of String)
+
+        For Each bc In barcodes
+            If Not newids.Contains(Left(bc.Value, My.Settings.NotensatzNrLength)) Then
+                newids.Add(Left(bc.Value, My.Settings.NotensatzNrLength))
+            End If
+        Next
+
+        For Each newid In newids
+            Dim ns As New Notensatz(newid)
+            If Not ns.CheckObInDatenbankVorhanden() Then ns.InDatenbankAnlegen()
+        Next
+    End Sub
 
 
 End Class

@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\archive")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\archive")>  _
         Public Property ArchivePath() As String
             Get
                 Return CType(Me("ArchivePath"),String)
@@ -68,7 +68,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\lukas\Documents\Visual Studio 2017\GitHub\Notenarchiv\database")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\database\db.accdb")>  _
         Public Property DBPath() As String
             Get
                 Return CType(Me("DBPath"),String)
