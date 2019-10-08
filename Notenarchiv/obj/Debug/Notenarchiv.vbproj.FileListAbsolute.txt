@@ -149,3 +149,7 @@ D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.vbproj.
 D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.exe
 D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.xml
 D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.pdb
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\ObjectListView.dll
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.DialogVerzeichnisAuswählen.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Inhaltsverzeichnisse.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.NotensatzHinzufuegen.resources
