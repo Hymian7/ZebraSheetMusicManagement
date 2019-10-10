@@ -2,10 +2,16 @@
 
     Public StimmeNr As String
     Public StimmeName As String
+    Public Alternativen(4) As Stimme
 
     Public Sub New(nr As String)
         StimmeNr = nr
         StimmeName = GetStimmeNameFromStimmeNr(nr)
+
+        For Each alt As Stimme In Alternativen
+            alt = Nothing
+        Next
+
     End Sub
 
     Shared Function GetStimmeNameFromStimmeNr(nr As String) As String

@@ -153,3 +153,5 @@ D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\bin\Debug\ObjectListVi
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.DialogVerzeichnisAuswählen.resources
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.Inhaltsverzeichnisse.resources
 D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.NotensatzHinzufuegen.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.ucStimmen.resources
+D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.StimmeDetail.resources

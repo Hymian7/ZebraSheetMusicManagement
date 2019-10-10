@@ -33,6 +33,7 @@ Public Class Hauptfenster
 
 
         AddHandler tabPageNotensaetze.Enter, AddressOf ucNotensätze.TabelleAktualisieren
+        AddHandler tabPageStimmen.Enter, AddressOf UcStimmen1.TabelleAktualisieren
 
     End Sub
 
