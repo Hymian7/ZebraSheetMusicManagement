@@ -2,15 +2,12 @@
 
     Public StimmeNr As String
     Public StimmeName As String
-    Public Alternativen(4) As Stimme
+    Public Alternativen(3) As String
 
     Public Sub New(nr As String)
         StimmeNr = nr
         StimmeName = GetStimmeNameFromStimmeNr(nr)
-
-        For Each alt As Stimme In Alternativen
-            alt = Nothing
-        Next
+        Alternativen = GetAlternativstimmen()
 
     End Sub
 
@@ -62,6 +59,39 @@
         Catch ex As Exception
             Return Nothing
         End Try
+
+    End Function
+
+    Private Function GetAlternativstimmen() As String()
+
+
+        Try
+            Dim dtr As New DataTableReader(GetSQL(String.Format("SELECT tbl_Stimme.id_StimmeNr, tbl_Stimme.fk_Alternative1, tbl_Stimme.fk_Alternative2, tbl_Stimme.fk_Alternative3, tbl_Stimme.fk_Alternative4 FROM tbl_Stimme WHERE (((tbl_Stimme.id_StimmeNr)='{0}'));", Me.StimmeNr)))
+
+            dtr.Read()
+
+            Dim _alternativen(Me.Alternativen.Length - 1) As String
+
+            For i As Byte = 0 To _alternativen.Length - 1
+
+
+                If dtr.IsDBNull(dtr.GetOrdinal((String.Format("fk_Alternative{0}", i + 1)))) Then
+                    Console.WriteLine("IsNull")
+                    _alternativen(i) = Nothing
+                Else
+                    _alternativen(i) = dtr.GetString(dtr.GetOrdinal(String.Format("fk_Alternative{0}", i + 1)))
+                End If
+
+            Next
+
+
+            Return _alternativen
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+
+            Return Nothing
+        End Try
+
 
     End Function
 
