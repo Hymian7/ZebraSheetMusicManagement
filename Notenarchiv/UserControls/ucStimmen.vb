@@ -31,8 +31,9 @@
 
     End Sub
 
-    Private Sub dlvStimmen_DoubleClick(sender As Object, e As EventArgs) Handles dlvStimmen.DoubleClick
+    Private Function dlvStimmen_DoubleClick(sender As Object, e As EventArgs) Handles dlvStimmen.DoubleClick
         Dim frmDetail As New StimmeDetail(New Stimme(dlvStimmen.SelectedItem.Text))
         frmDetail.Show()
-    End Sub
+        Return Nothing
+    End Function
 End Class

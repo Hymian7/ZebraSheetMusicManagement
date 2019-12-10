@@ -153,6 +153,12 @@
     <Compile Include="Forms\DialogVerzeichnisAuswählen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\DialogStimmeAuswählen.Designer.vb">
+      <DependentUpon>DialogStimmeAuswählen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogStimmeAuswählen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\StimmeDetail.Designer.vb">
       <DependentUpon>StimmeDetail.vb</DependentUpon>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DialogVerzeichnisAuswählen.resx">
       <DependentUpon>DialogVerzeichnisAuswählen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogStimmeAuswählen.resx">
+      <DependentUpon>DialogStimmeAuswählen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Inhaltsverzeichnisse.resx">
       <DependentUpon>Inhaltsverzeichnisse.vb</DependentUpon>

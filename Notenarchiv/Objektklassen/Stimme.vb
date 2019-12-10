@@ -11,6 +11,20 @@
 
     End Sub
 
+    Public Function Refresh() As Boolean
+
+        Try
+            StimmeName = GetStimmeNameFromStimmeNr(Me.StimmeNr)
+            Alternativen = GetAlternativstimmen()
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+
+
     Shared Function GetStimmeNameFromStimmeNr(nr As String) As String
 
         Try
@@ -76,7 +90,6 @@
 
 
                 If dtr.IsDBNull(dtr.GetOrdinal((String.Format("fk_Alternative{0}", i + 1)))) Then
-                    Console.WriteLine("IsNull")
                     _alternativen(i) = Nothing
                 Else
                     _alternativen(i) = dtr.GetString(dtr.GetOrdinal(String.Format("fk_Alternative{0}", i + 1)))
@@ -92,6 +105,17 @@
             Return Nothing
         End Try
 
+
+    End Function
+
+    Public Function AlternativeÄndern(_altNr As String, _altStimme As String) As Boolean
+
+        Try
+            SQLInterface.SetSQL(String.Format("UPDATE tbl_Stimme SET tbl_Stimme.fk_Alternative{0} = '{1}' WHERE (((tbl_Stimme.id_StimmeNr)='{2}'));", _altNr, _altStimme, Me.StimmeNr))
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
 
     End Function
 
