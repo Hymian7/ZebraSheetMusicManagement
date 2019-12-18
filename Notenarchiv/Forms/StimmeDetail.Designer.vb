@@ -36,13 +36,17 @@ Partial Class StimmeDetail
         Me.btnChangeAlt2 = New System.Windows.Forms.Button()
         Me.btnChangeAlt3 = New System.Windows.Forms.Button()
         Me.btnChangeAlt4 = New System.Windows.Forms.Button()
+        Me.btnResetAlt1 = New System.Windows.Forms.Button()
+        Me.btnResetAlt2 = New System.Windows.Forms.Button()
+        Me.btnResetAlt3 = New System.Windows.Forms.Button()
+        Me.btnResetAlt4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'tbStimmeNr
         '
         Me.tbStimmeNr.Enabled = False
         Me.tbStimmeNr.Location = New System.Drawing.Point(68, 103)
-        Me.tbStimmeNr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbStimmeNr.Margin = New System.Windows.Forms.Padding(4)
         Me.tbStimmeNr.Name = "tbStimmeNr"
         Me.tbStimmeNr.Size = New System.Drawing.Size(132, 22)
         Me.tbStimmeNr.TabIndex = 0
@@ -51,7 +55,7 @@ Partial Class StimmeDetail
         '
         Me.tbStimmeName.Enabled = False
         Me.tbStimmeName.Location = New System.Drawing.Point(209, 103)
-        Me.tbStimmeName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbStimmeName.Margin = New System.Windows.Forms.Padding(4)
         Me.tbStimmeName.Name = "tbStimmeName"
         Me.tbStimmeName.Size = New System.Drawing.Size(399, 22)
         Me.tbStimmeName.TabIndex = 1
@@ -99,7 +103,7 @@ Partial Class StimmeDetail
         'tbAlternative1
         '
         Me.tbAlternative1.Location = New System.Drawing.Point(161, 202)
-        Me.tbAlternative1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbAlternative1.Margin = New System.Windows.Forms.Padding(4)
         Me.tbAlternative1.Name = "tbAlternative1"
         Me.tbAlternative1.ReadOnly = True
         Me.tbAlternative1.Size = New System.Drawing.Size(399, 22)
@@ -108,7 +112,7 @@ Partial Class StimmeDetail
         'tbAlternative2
         '
         Me.tbAlternative2.Location = New System.Drawing.Point(161, 234)
-        Me.tbAlternative2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbAlternative2.Margin = New System.Windows.Forms.Padding(4)
         Me.tbAlternative2.Name = "tbAlternative2"
         Me.tbAlternative2.ReadOnly = True
         Me.tbAlternative2.Size = New System.Drawing.Size(399, 22)
@@ -117,7 +121,7 @@ Partial Class StimmeDetail
         'tbAlternative4
         '
         Me.tbAlternative4.Location = New System.Drawing.Point(161, 298)
-        Me.tbAlternative4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbAlternative4.Margin = New System.Windows.Forms.Padding(4)
         Me.tbAlternative4.Name = "tbAlternative4"
         Me.tbAlternative4.ReadOnly = True
         Me.tbAlternative4.Size = New System.Drawing.Size(399, 22)
@@ -126,7 +130,7 @@ Partial Class StimmeDetail
         'tbAlternative3
         '
         Me.tbAlternative3.Location = New System.Drawing.Point(161, 266)
-        Me.tbAlternative3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tbAlternative3.Margin = New System.Windows.Forms.Padding(4)
         Me.tbAlternative3.Name = "tbAlternative3"
         Me.tbAlternative3.ReadOnly = True
         Me.tbAlternative3.Size = New System.Drawing.Size(399, 22)
@@ -135,7 +139,7 @@ Partial Class StimmeDetail
         'btnChangeAlt1
         '
         Me.btnChangeAlt1.Location = New System.Drawing.Point(569, 202)
-        Me.btnChangeAlt1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnChangeAlt1.Margin = New System.Windows.Forms.Padding(4)
         Me.btnChangeAlt1.Name = "btnChangeAlt1"
         Me.btnChangeAlt1.Size = New System.Drawing.Size(60, 25)
         Me.btnChangeAlt1.TabIndex = 11
@@ -145,7 +149,7 @@ Partial Class StimmeDetail
         'btnChangeAlt2
         '
         Me.btnChangeAlt2.Location = New System.Drawing.Point(569, 234)
-        Me.btnChangeAlt2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnChangeAlt2.Margin = New System.Windows.Forms.Padding(4)
         Me.btnChangeAlt2.Name = "btnChangeAlt2"
         Me.btnChangeAlt2.Size = New System.Drawing.Size(60, 25)
         Me.btnChangeAlt2.TabIndex = 12
@@ -155,7 +159,7 @@ Partial Class StimmeDetail
         'btnChangeAlt3
         '
         Me.btnChangeAlt3.Location = New System.Drawing.Point(569, 266)
-        Me.btnChangeAlt3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnChangeAlt3.Margin = New System.Windows.Forms.Padding(4)
         Me.btnChangeAlt3.Name = "btnChangeAlt3"
         Me.btnChangeAlt3.Size = New System.Drawing.Size(60, 25)
         Me.btnChangeAlt3.TabIndex = 13
@@ -165,18 +169,62 @@ Partial Class StimmeDetail
         'btnChangeAlt4
         '
         Me.btnChangeAlt4.Location = New System.Drawing.Point(569, 298)
-        Me.btnChangeAlt4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnChangeAlt4.Margin = New System.Windows.Forms.Padding(4)
         Me.btnChangeAlt4.Name = "btnChangeAlt4"
         Me.btnChangeAlt4.Size = New System.Drawing.Size(60, 25)
         Me.btnChangeAlt4.TabIndex = 14
         Me.btnChangeAlt4.Text = "..."
         Me.btnChangeAlt4.UseVisualStyleBackColor = True
         '
+        'btnResetAlt1
+        '
+        Me.btnResetAlt1.Location = New System.Drawing.Point(637, 202)
+        Me.btnResetAlt1.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnResetAlt1.Name = "btnResetAlt1"
+        Me.btnResetAlt1.Size = New System.Drawing.Size(25, 25)
+        Me.btnResetAlt1.TabIndex = 15
+        Me.btnResetAlt1.Text = "X"
+        Me.btnResetAlt1.UseVisualStyleBackColor = True
+        '
+        'btnResetAlt2
+        '
+        Me.btnResetAlt2.Location = New System.Drawing.Point(637, 233)
+        Me.btnResetAlt2.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnResetAlt2.Name = "btnResetAlt2"
+        Me.btnResetAlt2.Size = New System.Drawing.Size(25, 25)
+        Me.btnResetAlt2.TabIndex = 16
+        Me.btnResetAlt2.Text = "X"
+        Me.btnResetAlt2.UseVisualStyleBackColor = True
+        '
+        'btnResetAlt3
+        '
+        Me.btnResetAlt3.Location = New System.Drawing.Point(637, 266)
+        Me.btnResetAlt3.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnResetAlt3.Name = "btnResetAlt3"
+        Me.btnResetAlt3.Size = New System.Drawing.Size(25, 25)
+        Me.btnResetAlt3.TabIndex = 17
+        Me.btnResetAlt3.Text = "X"
+        Me.btnResetAlt3.UseVisualStyleBackColor = True
+        '
+        'btnResetAlt4
+        '
+        Me.btnResetAlt4.Location = New System.Drawing.Point(637, 297)
+        Me.btnResetAlt4.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnResetAlt4.Name = "btnResetAlt4"
+        Me.btnResetAlt4.Size = New System.Drawing.Size(25, 25)
+        Me.btnResetAlt4.TabIndex = 18
+        Me.btnResetAlt4.Text = "X"
+        Me.btnResetAlt4.UseVisualStyleBackColor = True
+        '
         'StimmeDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.Controls.Add(Me.btnResetAlt4)
+        Me.Controls.Add(Me.btnResetAlt3)
+        Me.Controls.Add(Me.btnResetAlt2)
+        Me.Controls.Add(Me.btnResetAlt1)
         Me.Controls.Add(Me.btnChangeAlt4)
         Me.Controls.Add(Me.btnChangeAlt3)
         Me.Controls.Add(Me.btnChangeAlt2)
@@ -191,7 +239,7 @@ Partial Class StimmeDetail
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.tbStimmeName)
         Me.Controls.Add(Me.tbStimmeNr)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "StimmeDetail"
         Me.Text = "StimmeDetail"
         Me.ResumeLayout(False)
@@ -213,4 +261,8 @@ Partial Class StimmeDetail
     Friend WithEvents btnChangeAlt2 As Button
     Friend WithEvents btnChangeAlt3 As Button
     Friend WithEvents btnChangeAlt4 As Button
+    Friend WithEvents btnResetAlt1 As Button
+    Friend WithEvents btnResetAlt2 As Button
+    Friend WithEvents btnResetAlt3 As Button
+    Friend WithEvents btnResetAlt4 As Button
 End Class

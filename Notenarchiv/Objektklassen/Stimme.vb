@@ -111,12 +111,43 @@
     Public Function AlternativeÄndern(_altNr As String, _altStimme As String) As Boolean
 
         Try
-            SQLInterface.SetSQL(String.Format("UPDATE tbl_Stimme SET tbl_Stimme.fk_Alternative{0} = '{1}' WHERE (((tbl_Stimme.id_StimmeNr)='{2}'));", _altNr, _altStimme, Me.StimmeNr))
+            If Not _altStimme = Nothing Then
+                SQLInterface.SetSQL(String.Format("UPDATE tbl_Stimme SET tbl_Stimme.fk_Alternative{0} = '{1}' WHERE (((tbl_Stimme.id_StimmeNr)='{2}'));", _altNr, _altStimme, Me.StimmeNr))
+            Else
+                SQLInterface.SetSQL(String.Format("UPDATE tbl_Stimme SET tbl_Stimme.fk_Alternative{0} = NULL WHERE (((tbl_Stimme.id_StimmeNr)='{1}'));", _altNr, Me.StimmeNr))
+            End If
+
+            RaiseEvent HasChanged(Me, New StimmeEventArgs(StimmeEventArgs.EventResult.OK))
             Return True
         Catch ex As Exception
             Return False
         End Try
 
     End Function
+
+#Region "Events"
+
+
+    Public Event HasChanged(ByVal Sender As Object, ByVal e As StimmeEventArgs)
+
+
+#End Region
+
+End Class
+
+Public Class StimmeEventArgs
+    Inherits EventArgs
+
+    'das was man später unter e sehen kann
+    Public Result As EventResult
+    'hier - als Beispiel - einfach eine Enum
+    Public Enum EventResult
+        OK
+        Failed
+    End Enum
+    'Zum übergeben der Parameter
+    Public Sub New(ByVal r As EventResult)
+        Me.Result = r
+    End Sub
 
 End Class
