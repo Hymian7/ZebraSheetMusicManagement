@@ -158,3 +158,6 @@ D:\Dokumente\GitHub\ZebraSheetMusicManagement\Notenarchiv\obj\Debug\Notenarchiv.
 D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.StimmeDetail.resources
 D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.ucStimmen.resources
 D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\obj\Debug\Notenarchiv.DialogStimmeAuswählen.resources
+D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\database\db - Kopie - Kopie.accdb
+D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\database\db.accdb
+D:\Dokumente\Visual Studio 2017\GitHub\Notenarchiv\bin\Debug\database\db.sdf

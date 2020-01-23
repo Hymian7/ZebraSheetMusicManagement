@@ -1,4 +1,6 @@
-﻿Public Class ucStimmen
+﻿Imports System.IO
+
+Public Class ucStimmen
 
     Public Sub New()
 
@@ -35,5 +37,45 @@
         Dim frmDetail As New StimmeDetail(New Stimme(dlvStimmen.SelectedItem.Text))
         frmDetail.Show()
         Return Nothing
+    End Function
+
+    Private Sub btn_treeview_Click(sender As Object, e As EventArgs) Handles btn_treeview.Click
+        'Alle verfügbaren Stimmen in DataTreeListView
+
+        'tlvStimmenBaum.CanExpandGetter = Function(ByVal x) (TypeOf x Is Stimmengruppe)
+        'tlvStimmenBaum.ChildrenGetter = Function(ByVal x)
+        '                                    Dim StimList As New List(Of Stimme)
+        '                                    Dim StimGrup = CType(x, Stimmengruppe)
+        '                                    For Each stim As Stimme In Stimme.GetAlleVerfuegbarenStimmen
+        '                                        If stim.StimmengruppenID = StimGrup.StimmengruppenID Then StimList.Add(stim)
+        '                                    Next
+
+        '                                    Return StimList
+
+        '                                End Function
+
+        'tlvStimmenBaum.Roots = Stimmengruppe.GetAlleStimmengruppen
+        'tlvStimmenBaum.AutoResizeColumns()
+
+        tlvStimmenBaum.CanExpandGetter = AddressOf tlv_canexpandgetter
+        tlvStimmenBaum.ChildrenGetter = AddressOf tlv_childrengetter_delegate
+        tlvStimmenBaum.SetObjects(Stimmengruppe.GetAlleStimmengruppen)
+    End Sub
+
+    Private Function tlv_canexpandgetter(ByVal tlv_root As Object) As Boolean
+        If TypeOf tlv_root Is Stimmengruppe Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Private Function tlv_childrengetter_delegate(ByVal tlv_root As Stimmengruppe) As List(Of Stimme)
+        Dim StimList As New List(Of Stimme)
+        For Each stim As Stimme In Stimme.GetAlleVerfuegbarenStimmen
+            If stim.StimmengruppenID = tlv_root.StimmengruppenID Then StimList.Add(stim)
+        Next
+
+        Return StimList
     End Function
 End Class

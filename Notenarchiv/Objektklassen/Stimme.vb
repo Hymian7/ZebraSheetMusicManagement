@@ -3,11 +3,13 @@
     Public StimmeNr As String
     Public StimmeName As String
     Public Alternativen(3) As String
+    Public StimmengruppenID As Integer
 
     Public Sub New(nr As String)
         StimmeNr = nr
         StimmeName = GetStimmeNameFromStimmeNr(nr)
         Alternativen = GetAlternativstimmen()
+        StimmengruppenID = GetStimmengruppe()
 
     End Sub
 
@@ -46,6 +48,20 @@
             dtr.Read()
 
             Return dtr.GetString(dtr.GetOrdinal("dt_StimmeName"))
+        Catch ex As Exception
+
+        End Try
+
+        Return Nothing
+    End Function
+
+    Private Function GetStimmengruppe() As String
+
+        Try
+            Dim dtr As New DataTableReader(GetSQL(String.Format("SELECT * FROM tbl_Stimme WHERE id_StimmeNr LIKE '{0}'", Me.StimmeNr)))
+            dtr.Read()
+
+            Return dtr.GetInt32(dtr.GetOrdinal("fk_StimmengruppenID"))
         Catch ex As Exception
 
         End Try
