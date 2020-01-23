@@ -153,6 +153,24 @@
     <Compile Include="Forms\DialogVerzeichnisAuswählen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\DialogStimmeAuswählen.Designer.vb">
+      <DependentUpon>DialogStimmeAuswählen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogStimmeAuswählen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StimmeDetail.Designer.vb">
+      <DependentUpon>StimmeDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StimmeDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucStimmen.Designer.vb">
+      <DependentUpon>ucStimmen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucStimmen.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Hilfsklassen\DataGridViewProgressColumn.vb" />
     <Compile Include="Forms\Detail.Designer.vb">
       <DependentUpon>Detail.vb</DependentUpon>
@@ -235,6 +253,9 @@
     <EmbeddedResource Include="Forms\DialogVerzeichnisAuswählen.resx">
       <DependentUpon>DialogVerzeichnisAuswählen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogStimmeAuswählen.resx">
+      <DependentUpon>DialogStimmeAuswählen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Inhaltsverzeichnisse.resx">
       <DependentUpon>Inhaltsverzeichnisse.vb</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +282,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StimmeDetail.resx">
+      <DependentUpon>StimmeDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucStimmen.resx">
+      <DependentUpon>ucStimmen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
